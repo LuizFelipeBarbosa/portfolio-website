@@ -12,63 +12,44 @@ function App() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isNavVisible, setIsNavVisible] = useState(false);
 
-	const workExperience = [
-		{
-			title: "Director and Producer",
-			company: "UC Riverside Media and Cultural Studies Department",
-			period: "March 2024 - June 2024",
-			description:
-				"Directed and produced 14 professional-grade short videos for the department, collaborating with a team to enhance the department's outreach, engagement and marketing efforts. Interviewed professors to create engaging marketing content that introduced students to faculty members.",
-			technologies: ["Video Production", "Marketing", "Team Leadership"],
-		},
-		{
-			title: "Associate Producer",
-			company: "Documentary Film Ghosts of Adelanto",
-			period: "September 2023 - December 2023",
-			description:
-				"Organized and moderated a lobbying event that included a movie screening with 50+ University of California students, fostering dialogue and advocacy with Congressman Mark Takano. Designed graphics for marketing, captioned the movie, managed finances, and conducted due diligence.",
-			technologies: ["Event Management", "Marketing", "Film Production"],
-		},
-		{
-			title: "Cashier and Clerk",
-			company: "Swift (Meat Retail Store)",
-			period: "August 2021 - November 2021",
-			description:
-				"Assisted customers by understanding their needs and providing tailored information. Managed incoming phone calls professionally and maintained an organized work environment.",
-			technologies: ["Customer Service", "Store Operations", "Sales"],
-		},
-	];
+        const workExperience = [
+                {
+                        title: "Data Science Intern",
+                        company: "Industry Ventures, San Francisco, California",
+                        period: "June 2025 - Aug 2025",
+                        highlights: [
+                                "Used Latent Dirichlet Allocation (LDA) to evaluate past deal outcomes and predict which new deals would pass investment committee with high confidence.",
+                                "Applied machine learning to portfolio-company 10-Qs, 10-Ks, and transcripts to derive signals and generate leads.",
+                                "Created dashboards and visualizations using SQL and Notion to surface insights from new data sources.",
+                                "Updated private market dealflow processes in Notion to streamline sourcing and evaluation workflows.",
+                        ],
+                        technologies: ["Python", "LDA", "SQL", "Dashboards", "Notion", "Machine Learning"],
+                },
+        ];
 
-	const leadershipExperience = [
-		{
-			title: "Board Member Technology and Marketing",
-			organization: "BRASA UC Berkeley",
-			period: "August 2024 - Present",
-			description:
-				"Developed a website using JavaScript and React using basic UX and UI principles to improve marketing and accessibility to club information. Designed flyers and posters to promote club events and foster student engagement.",
-		},
-		{
-			title: "Marketing and Web Blog Subcommittee Member",
-			organization: "BAMPFA Student Committee",
-			period: "August 2024 - Present",
-			description:
-				"Collaborated with a team of five to create and refine the club's website design using Figma. Developed and implemented front-end functionality in React, translating design mockups into a responsive, user-friendly site.",
-		},
-		{
-			title: "Founder and Director",
-			organization: "Media and Cultural Studies Film Club",
-			period: "January 2024 - June 2024",
-			description:
-				"Secured sponsorships, led marketing efforts and arranged screenings to explore the intersection of media and culture. Developed leadership skills, managed club activities and fostered student engagement.",
-		},
-		{
-			title: "Project Manager",
-			organization: "The Fusako Project",
-			period: "March 2023 - June 2023",
-			description:
-				"Engaged in a project to remove online misinformation, displaying organizational skills and interest in understanding geo-political issues. Assisted in group organization, social media content creation, and editing Wikipedia.",
-		},
-	];
+        const leadershipExperience = [
+                {
+                        title: "Board Member, Technology and Marketing",
+                        organization: "BRASA UC Berkeley",
+                        period: "August 2024 - Present",
+                        description:
+                                "Built and maintained the BRASA website to improve accessibility to club information while designing flyers and posters that increased attendance and engagement across campus.",
+                },
+                {
+                        title: "Founder and Director",
+                        organization: "Media and Cultural Studies Film Club",
+                        period: "January 2024 - June 2024",
+                        description:
+                                "Founded a film club exploring media and culture intersections, secured sponsorships, led marketing, and coordinated screenings that built a consistent community of attendees.",
+                },
+                {
+                        title: "Member",
+                        organization: "Leadership and Innovation Society",
+                        period: "October 2023 - June 2024",
+                        description:
+                                "Collaborated with peers on leadership development, communication, and innovation activities focused on creative problem-solving for social-impact challenges.",
+                },
+        ];
 
 	const scrollToSection = (e, sectionId) => {
 		e.preventDefault();
@@ -92,29 +73,61 @@ function App() {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	const projects = [
-		{
-			title: "UC Riverside Department Videos",
-			description:
-				"Directed and produced a series of 14 professional-grade marketing videos showcasing faculty and facilities for the Media and Cultural Studies Department.",
-			tags: ["Video Production", "Marketing", "Direction"],
-			link: "https://youtube.com/playlist?list=PLMyhLs26xcYtH4j5slpayi-c1_ws6yUeI&si=14V-4PhgKSfSDAvR",
-		},
-		{
-			title: "Ghosts of Adelanto Documentary",
-			description:
-				"Associate producer for documentary film, organizing screenings and advocacy events with Congressman Mark Takano.",
-			tags: ["Film Production", "Event Management", "Advocacy"],
-			link: "#",
-		},
-		{
-			title: "BRASA UC Berkeley Website",
-			description:
-				"Developed and designed a responsive website using React and modern UX/UI principles to improve club accessibility and engagement.",
-			tags: ["React", "JavaScript", "UI/UX"],
-			link: "https://brasa.studentorg.berkeley.edu/",
-		},
-	];
+        const projects = [
+                {
+                        title: "AI-Powered Document Generation",
+                        period: "June 2024 - Present",
+                        description:
+                                "Developed an AI agent using LangChain to generate RFP and NDA drafts from PDF ingestions, reducing document turnaround time from 20 minutes to seconds with OCR, semantic search, and vector databases.",
+                        tags: ["LangChain", "LLM", "OCR", "Vector Database"],
+                        link: "#",
+                },
+                {
+                        title: "UC Riverside Media and Cultural Studies Department Videos",
+                        period: "June 2024 - September 2024",
+                        description:
+                                "Directed and produced 15+ marketing videos that improved departmental outreach by showcasing faculty, facilities, and program highlights across social media channels.",
+                        tags: ["Video Production", "Marketing", "Content Strategy"],
+                        link: "https://youtube.com/playlist?list=PLMyhLs26xcYtH4j5slpayi-c1_ws6yUeI&si=14V-4PhgKSfSDAvR",
+                },
+                {
+                        title: "BRASA UC Berkeley Website",
+                        period: "August 2024 - Present",
+                        description:
+                                "Built a responsive website to centralize resources for Brazilian students at Berkeley, applying modern UX patterns and React components to make club information accessible.",
+                        tags: ["React", "JavaScript", "UI/UX"],
+                        link: "https://brasa.studentorg.berkeley.edu/",
+                },
+                {
+                        title: "Immersive Cinema Experience",
+                        period: "December 2023 - February 2024",
+                        description:
+                                "Designed a film installation exploring vulnerability through editing, integrating EEG sensors with Arduino and TouchDesigner to translate brainwave data into synchronized visuals and audio.",
+                        tags: ["Installation", "Arduino", "TouchDesigner", "EEG"],
+                        link: "#",
+                },
+        ];
+
+        const skills = {
+                technical: [
+                        "JavaScript",
+                        "Python",
+                        "React",
+                        "HTML",
+                        "CSS",
+                        "Adobe Suite",
+                        "Data Science (Pandas, sklearn)",
+                        "Figma",
+                ],
+                languages: ["English and Portuguese (native)", "Spanish (conversational)"],
+        };
+
+        const honors = [
+                "UCB Summer Session Grant", 
+                "PCRF Outreach Excellence Award", 
+                "UCWbL Writing Tutors Travel Grant", 
+                "United Kingdom Mathematics Trust Award (2020)"
+        ];
 
 	return (
 		<div className="min-h-screen bg-gray-50">
@@ -262,23 +275,19 @@ function App() {
 			</nav>
 
 			{/* Hero Section */}
-			<div className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-50 to-gray-100">
-				<div className="absolute inset-0">
-					<div className="absolute inset-0 bg-gray-900 opacity-5"></div>
-					<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.05),transparent_80%)]"></div>
-				</div>
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-					<div className="text-center">
-						<h1 className="text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
-							Luiz Felipe Barbosa
-						</h1>
-						<p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-							Mathematics and Media Studies student at UC
-							Berkeley, with experience in film production, web
-							development, and creative direction. Passionate
-							about combining technical expertise with creative
-							vision.
-						</p>
+                        <div className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-50 to-gray-100">
+                                <div className="absolute inset-0">
+                                        <div className="absolute inset-0 bg-gray-900 opacity-5"></div>
+                                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.05),transparent_80%)]"></div>
+                                </div>
+                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                                        <div className="text-center">
+                                                <h1 className="text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
+                                                        Luiz Felipe Barbosa
+                                                </h1>
+                                                <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                                                        Mathematics and Media Studies student at UC Berkeley focused on data science, machine learning, and media storytelling. I build tools and experiences that combine analytical rigor with creative direction.
+                                                </p>
 						<div className="flex justify-center space-x-4">
 							<button
 								onClick={(e) => scrollToSection(e, "projects")}
@@ -310,45 +319,34 @@ function App() {
 			{/* About Section */}
 			<section id="about" className="bg-white py-32">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-						About Me
-					</h2>
-					<div className="prose prose-lg text-gray-600">
-						<p>
-							I'm currently pursuing a Bachelor's of Arts in
-							Mathematics and Media Studies at UC Berkeley with a
-							GPA of 3.95. My journey includes experience in film
-							production, web development, and creative direction,
-							allowing me to bridge the gap between technical
-							implementation and creative vision.
-						</p>
-						<p className="mt-4">
-							I'm proficient in JavaScript, Python, React, and the
-							Adobe Suite, with a strong foundation in both
-							front-end development and media production. I'm
-							fluent in English and Portuguese, with
-							conversational Spanish skills.
-						</p>
-						<div className="mt-6">
-							<h3 className="text-xl font-semibold text-gray-900 mb-3">
-								Education
-							</h3>
-							<ul className="space-y-2">
-								<li>
-									UC Berkeley - BA in Mathematics and Media
-									Studies (Expected May 2026)
-								</li>
-								<li>
-									UC Riverside (September 2022 - June 2024)
-								</li>
-								<li>
-									St Paul's School the British School of São
-									Paulo - Bilingual IB Diploma (2022)
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+                                        <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+                                                About Me
+                                        </h2>
+                                        <div className="prose prose-lg text-gray-600">
+                                                <p>
+                                                        I'm a Mathematics and Media Studies student at UC Berkeley (GPA 3.90) with a background in data science internships and creative media work. I thrive at the intersection of analytics and storytelling, building AI-assisted tools and immersive experiences.
+                                                </p>
+                                                <p className="mt-4">
+                                                        My toolkit includes JavaScript, Python, React, the Adobe Suite, and data science workflows in pandas and scikit-learn. I'm fluent in English and Portuguese with conversational Spanish skills.
+                                                </p>
+                                                <div className="mt-6">
+                                                        <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                                                                Education
+                                                        </h3>
+                                                        <ul className="space-y-2">
+                                                                <li>
+                                                                        University of California, Berkeley — BA in Mathematics and Media Studies (GPA 3.90), expected December 2026
+                                                                </li>
+                                                                <li>
+                                                                        University of California, Riverside — BA in Media and Cultural Studies and Data Science (GPA 3.92), September 2022 - June 2024
+                                                                </li>
+                                                                <li>
+                                                                        St Paul's School, The British School of São Paulo — Bilingual IB Diploma (2022)
+                                                                </li>
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
 			</section>
 
 			{/* Work Experience Section */}
@@ -363,26 +361,32 @@ function App() {
 								key={index}
 								className="bg-white rounded-lg shadow-lg p-8 transition-transform duration-300 hover:-translate-y-1"
 							>
-								<div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-									<div>
-										<h3 className="text-2xl font-semibold text-gray-900">
-											{job.title}
-										</h3>
+                                                                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                                                        <div>
+                                                                                <h3 className="text-2xl font-semibold text-gray-900">
+                                                                                        {job.title}
+                                                                                </h3>
 										<p className="text-lg text-gray-600">
 											{job.company}
 										</p>
 									</div>
-									<span className="text-gray-500 mt-2 md:mt-0">
-										{job.period}
-									</span>
-								</div>
-								<p className="text-gray-600 mb-4">
-									{job.description}
-								</p>
-								<div className="flex flex-wrap gap-2">
-									{job.technologies.map((tech, techIndex) => (
-										<span
-											key={techIndex}
+                                                                        <span className="text-gray-500 mt-2 md:mt-0">
+                                                                                {job.period}
+                                                                        </span>
+                                                                </div>
+                                                                {job.highlights ? (
+                                                                        <ul className="list-disc list-inside text-gray-600 mb-4 space-y-2">
+                                                                                {job.highlights.map((item, idx) => (
+                                                                                        <li key={idx}>{item}</li>
+                                                                                ))}
+                                                                        </ul>
+                                                                ) : (
+                                                                        <p className="text-gray-600 mb-4">{job.description}</p>
+                                                                )}
+                                                                <div className="flex flex-wrap gap-2">
+                                                                        {job.technologies.map((tech, techIndex) => (
+                                                                                <span
+                                                                                        key={techIndex}
 											className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
 										>
 											{tech}
@@ -429,24 +433,29 @@ function App() {
 				</div>
 			</section>
 
-			{/* Projects Section */}
-			<section id="projects" className="py-20">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-						Projects
+                        {/* Projects Section */}
+                        <section id="projects" className="py-20">
+                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                                                Projects
 					</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 						{projects.map((project, index) => (
-							<div
-								key={index}
-								className="bg-white p-6 rounded-lg shadow"
-							>
-								<h3 className="text-xl font-semibold mb-2">
-									{project.title}
-								</h3>
-								<p className="text-gray-600 mb-4">
-									{project.description}
-								</p>
+                                                                <div
+                                                                        key={index}
+                                                                        className="bg-white p-6 rounded-lg shadow"
+                                                                >
+                                                                <h3 className="text-xl font-semibold mb-2">
+                                                                        {project.title}
+                                                                </h3>
+                                                                {project.period && (
+                                                                        <p className="text-gray-500 text-sm mb-2">
+                                                                                {project.period}
+                                                                        </p>
+                                                                )}
+                                                                <p className="text-gray-600 mb-4">
+                                                                        {project.description}
+                                                                </p>
 								<div className="flex flex-wrap gap-2 mb-4">
 									{project.tags.map((tag, tagIndex) => (
 										<span
@@ -466,44 +475,104 @@ function App() {
 								</a>
 							</div>
 						))}
-					</div>
-				</div>
-			</section>
+                                        </div>
+                                </div>
+                        </section>
 
-			{/* Contact Section */}
-			<section id="contact" className="bg-white py-20">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-						Get in Touch
-					</h2>
-					<div className="flex flex-col items-center space-y-6">
-						<p className="text-gray-600 text-center max-w-2xl">
-							Interested in working together? Feel free to reach
-							out through any of the following channels.
-						</p>
-						<div className="flex space-x-8">
-							<a
-								href="https://github.com/LuizFelipeBarbosa"
-								className="text-gray-600 hover:text-gray-900"
-							>
-								<GithubIcon size={24} />
+                        {/* Skills and Honors Section */}
+                        <section className="py-20 bg-gray-50">
+                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                                                <div>
+                                                        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                                                                Skills & Languages
+                                                        </h2>
+                                                        <div className="space-y-4">
+                                                                <div>
+                                                                        <h3 className="text-xl font-semibold text-gray-900">
+                                                                                Technical
+                                                                        </h3>
+                                                                        <div className="flex flex-wrap gap-2 mt-2">
+                                                                                {skills.technical.map((skill, index) => (
+                                                                                        <span
+                                                                                                key={index}
+                                                                                                className="bg-white shadow px-3 py-1 rounded-full text-sm text-gray-800"
+                                                                                        >
+                                                                                                {skill}
+                                                                                        </span>
+                                                                                ))}
+                                                                        </div>
+                                                                </div>
+                                                                <div>
+                                                                        <h3 className="text-xl font-semibold text-gray-900">
+                                                                                Languages
+                                                                        </h3>
+                                                                        <ul className="list-disc list-inside text-gray-700">
+                                                                                {skills.languages.map((language, index) => (
+                                                                                        <li key={index}>{language}</li>
+                                                                                ))}
+                                                                        </ul>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <div>
+                                                        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                                                                Honors & Awards
+                                                        </h2>
+                                                        <ul className="space-y-3 text-gray-700">
+                                                                {honors.map((honor, index) => (
+                                                                        <li
+                                                                                key={index}
+                                                                                className="bg-white shadow rounded-lg px-4 py-3"
+                                                                        >
+                                                                                {honor}
+                                                                        </li>
+                                                                ))}
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
+                        </section>
+
+                        {/* Contact Section */}
+                        <section id="contact" className="bg-white py-20">
+                                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                                                Get in Touch
+                                        </h2>
+                                        <div className="flex flex-col items-center space-y-6">
+                                                <p className="text-gray-600 text-center max-w-2xl">
+                                                        Interested in working together? Reach out for collaborations in data science, media production, or creative technology.
+                                                </p>
+                                                <div className="flex space-x-8 items-center">
+                                                        <a
+                                                                href="https://github.com/LuizFelipeBarbosa"
+                                                                className="text-gray-600 hover:text-gray-900"
+                                                        >
+                                                                <GithubIcon size={24} />
 							</a>
 							<a
 								href="https://www.linkedin.com/in/luiz-felipe-barbosa-5989a9294/"
-								className="text-gray-600 hover:text-gray-900"
-							>
-								<LinkedinIcon size={24} />
-							</a>
-							<a
-								href="mailto:lbarb021@berkeley.edu"
-								className="text-gray-600 hover:text-gray-900"
-							>
-								<MailIcon size={24} />
-							</a>
-						</div>
-					</div>
-				</div>
-			</section>
+                                                                className="text-gray-600 hover:text-gray-900"
+                                                        >
+                                                                <LinkedinIcon size={24} />
+                                                        </a>
+                                                        <a
+                                                                href="mailto:lpbp1@icloud.com"
+                                                                className="text-gray-600 hover:text-gray-900"
+                                                        >
+                                                                <MailIcon size={24} />
+                                                        </a>
+                                                        <a
+                                                                href="tel:+13474494034"
+                                                                className="text-gray-600 hover:text-gray-900 font-medium"
+                                                        >
+                                                                +1 (347) 449-4034
+                                                        </a>
+                                                </div>
+                                        </div>
+                                </div>
+                        </section>
 
 			{/* Footer */}
 			<footer className="bg-gray-900 text-white py-8">
