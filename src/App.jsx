@@ -361,9 +361,8 @@ function App() {
 									expected December 2026
 								</li>
 								<li>
-									University of California, Riverside — BA in
-									Media and Cultural Studies and Data Science
-									(GPA 3.92), September 2022 - June 2024
+									University of California, Riverside (GPA
+									3.92), September 2022 - June 2024
 								</li>
 								<li>
 									St Paul's School, The British School of São
