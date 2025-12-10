@@ -106,6 +106,14 @@ function App() {
 			tags: ["React", "JavaScript", "UI/UX"],
 			link: "https://brasa.studentorg.berkeley.edu/",
 		},
+				{
+			title: "Geography Game Website",
+			period: "August 2025 - Present",
+			description:
+				"Inspired by the SPORCLE Countries of the World game, I created a website that allows users to test their knowledge of countries on a responsive zoomable map.",
+			tags: ["React", "JavaScript", "UI/UX"],
+			link: "https://hilarious-praline-94656f.netlify.app",
+		},
 	];
 
 	const skills = {
