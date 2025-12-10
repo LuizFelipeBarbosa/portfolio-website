@@ -37,7 +37,7 @@ function App() {
 
 	const leadershipExperience = [
 		{
-			title: "Board Member, Technology and Marketing",
+			title: "Co-President, Technology and Marketing",
 			organization: "BRASA UC Berkeley",
 			period: "August 2024 - Present",
 			description:
@@ -84,7 +84,7 @@ function App() {
 	const projects = [
 		{
 			title: "AI-Powered Document Generation",
-			period: "June 2024 - Present",
+			period: "June 2025 - August 2025",
 			description:
 				"Built an AI-powered internal research system to semantically search thousands of internal documents. Integrated Azure Document Intelligence to extract structured data from PDFs and slides, and developed a deep-research chatbot that blends semantic retrieval with web queries for rapid, reliable knowledge access.",
 			tags: ["LangChain", "LLM", "OCR", "Vector Database", "Azure Cognitive Search", "LangGraph", "Azure Document Intelligence"],
@@ -96,7 +96,7 @@ function App() {
 			description:
 				"Directed and produced 15+ marketing videos that improved departmental outreach by showcasing faculty, facilities, and program highlights across social media channels.",
 			tags: ["Video Production", "Marketing", "Content Strategy"],
-			link: "https://youtube.com/playlist?list=PLMyhLs26xcYtH4j5slpayi-c1_ws6yUeI&si=14V-4PhgKSfSDAvR",
+			link: "https://www.youtube.com/playlist?list=PL3T67H0ayuPncCFzT-ilrE4LExso6aZhz",
 		},
 		{
 			title: "BRASA UC Berkeley Website",
