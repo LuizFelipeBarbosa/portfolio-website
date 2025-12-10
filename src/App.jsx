@@ -86,8 +86,8 @@ function App() {
 			title: "AI-Powered Document Generation",
 			period: "June 2024 - Present",
 			description:
-				"Developed an AI agent using LangChain to generate RFP and NDA drafts from PDF ingestions, reducing document turnaround time from 20 minutes to seconds with OCR, semantic search, and vector databases.",
-			tags: ["LangChain", "LLM", "OCR", "Vector Database"],
+				"Built an AI-powered internal research system to semantically search thousands of internal documents. Integrated Azure Document Intelligence to extract structured data from PDFs and slides, and developed a deep-research chatbot that blends semantic retrieval with web queries for rapid, reliable knowledge access.",
+			tags: ["LangChain", "LLM", "OCR", "Vector Database", "Azure Cognitive Search", "LangGraph", "Azure Document Intelligence"],
 			link: "#",
 		},
 		{
@@ -105,14 +105,6 @@ function App() {
 				"Built a responsive website to centralize resources for Brazilian students at Berkeley, applying modern UX patterns and React components to make club information accessible.",
 			tags: ["React", "JavaScript", "UI/UX"],
 			link: "https://brasa.studentorg.berkeley.edu/",
-		},
-		{
-			title: "Immersive Cinema Experience",
-			period: "December 2023 - February 2024",
-			description:
-				"Designed a film installation exploring vulnerability through editing, integrating EEG sensors with Arduino and TouchDesigner to translate brainwave data into synchronized visuals and audio.",
-			tags: ["Installation", "Arduino", "TouchDesigner", "EEG"],
-			link: "#",
 		},
 	];
 
