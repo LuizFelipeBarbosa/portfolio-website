@@ -13,6 +13,22 @@ function App() {
 	const [isNavVisible, setIsNavVisible] = useState(false);
 
 	const workExperience = [
+				{
+			title: "Data Science Intern",
+			company: "Base Partners, Sao Paulo, Brazil",
+			period: "January 2026 - Present",
+			highlights: [
+				"Drove market research, financial analysis, and modeling to evaluate early-stage and growth investments across fintech, SaaS, and consumer sectors.",
+				"Led expert and customer interviews via Tegus to validate product-market fit, buyer behavior, and competitive positioning; synthesize insights into investment memos for partner review.",
+			],
+			technologies: [
+				"Excel",
+				"Python",
+				"JavaScript",
+				"Figma",
+				"React",
+			],
+		},
 		{
 			title: "Data Science Intern",
 			company: "Industry Ventures, San Francisco, California",
@@ -112,7 +128,7 @@ function App() {
 			description:
 				"Inspired by the SPORCLE Countries of the World game, I created a website that allows users to test their knowledge of countries on a responsive zoomable map.",
 			tags: ["React", "JavaScript", "UI/UX"],
-			link: "https://hilarious-praline-94656f.netlify.app",
+			link: "https://geographyfun.netlify.app",
 		},
 	];
 
