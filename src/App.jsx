@@ -14,7 +14,7 @@ function App() {
 
 	const workExperience = [
 				{
-			title: "Data Science Intern",
+			title: "Analyst Intern",
 			company: "Base Partners, Sao Paulo, Brazil",
 			period: "January 2026 - Present",
 			highlights: [
