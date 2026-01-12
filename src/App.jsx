@@ -13,7 +13,7 @@ function App() {
 	const [isNavVisible, setIsNavVisible] = useState(false);
 
 	const workExperience = [
-				{
+		{
 			title: "Analyst Intern",
 			company: "Base Partners, Sao Paulo, Brazil",
 			period: "January 2026 - Present",
@@ -21,13 +21,7 @@ function App() {
 				"Drove market research, financial analysis, and modeling to evaluate early-stage and growth investments across fintech, SaaS, and consumer sectors.",
 				"Led expert and customer interviews via Tegus to validate product-market fit, buyer behavior, and competitive positioning; synthesize insights into investment memos for partner review.",
 			],
-			technologies: [
-				"Excel",
-				"Python",
-				"JavaScript",
-				"Figma",
-				"React",
-			],
+			technologies: ["Excel", "Python", "JavaScript", "Figma", "React"],
 		},
 		{
 			title: "Data Science Intern",
@@ -103,7 +97,15 @@ function App() {
 			period: "June 2025 - August 2025",
 			description:
 				"Built an AI-powered internal research system to semantically search thousands of internal documents. Integrated Azure Document Intelligence to extract structured data from PDFs and slides, and developed a deep-research chatbot that blends semantic retrieval with web queries for rapid, reliable knowledge access.",
-			tags: ["LangChain", "LLM", "OCR", "Vector Database", "Azure Cognitive Search", "LangGraph", "Azure Document Intelligence"],
+			tags: [
+				"LangChain",
+				"LLM",
+				"OCR",
+				"Vector Database",
+				"Azure Cognitive Search",
+				"LangGraph",
+				"Azure Document Intelligence",
+			],
 			link: "#",
 		},
 		{
@@ -122,7 +124,7 @@ function App() {
 			tags: ["React", "JavaScript", "UI/UX"],
 			link: "https://brasa.studentorg.berkeley.edu/",
 		},
-				{
+		{
 			title: "Geography Game Website",
 			period: "August 2025 - Present",
 			description:
@@ -606,18 +608,6 @@ function App() {
 								className="text-gray-600 hover:text-gray-900"
 							>
 								<LinkedinIcon size={24} />
-							</a>
-							<a
-								href="mailto:lpbp1@icloud.com"
-								className="text-gray-600 hover:text-gray-900"
-							>
-								<MailIcon size={24} />
-							</a>
-							<a
-								href="tel:+13474494034"
-								className="text-gray-600 hover:text-gray-900 font-medium"
-							>
-								+1 (347) 449-4034
 							</a>
 						</div>
 					</div>
