@@ -71,7 +71,7 @@ export default function About() {
           initial={hasMounted ? { opacity: 0, y: 30 } : false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid md:grid-cols-3 md:grid-rows-[1fr_auto] gap-4 mb-12"
+          className="grid md:grid-cols-3 gap-4 mb-12 md:items-stretch"
         >
           {/* Academic Record — top left */}
           <div className="glass-card p-6 relative overflow-hidden">
@@ -129,9 +129,7 @@ export default function About() {
             <div className="space-y-2">
               {[
                 "Dean's Honors List — UC Berkeley: Fall 2024",
-                "Dean's Honors List — UC Riverside: Winter 2023/24",
-                "Dean's Honors List — UC Riverside: Spring 2023/24",
-                "Dean's Honors List — UC Riverside: Fall 2023",
+                "Dean's Honors List — UC Riverside: Fall 2023, Winter/Spring 2023–24",
               ].map((award) => (
                 <div key={award} className="flex gap-2 items-start">
                   <span className="w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0 mt-1.5" />
