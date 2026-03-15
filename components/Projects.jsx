@@ -16,28 +16,6 @@ import {
 const projects = [
   {
     featured: true,
-    title: 'Kalshi Prediction Market Trading Bot',
-    subtitle: 'Algorithmic Trading System',
-    description:
-      'Built and backtested an algorithmic trading system for Kalshi political prediction markets. Developed signal generation models using statistical analysis of market microstructure and historical pricing patterns.',
-    metrics: [
-      { icon: Target, label: 'Win Rate', value: '52.8%' },
-      { icon: TrendingUp, label: 'Profit Factor', value: '2.36x' },
-      { icon: BarChart3, label: 'Backtested Trades', value: '28,903' },
-    ],
-    tags: [
-      'Python',
-      'asyncio',
-      'Backtesting',
-      'Statistics',
-      'Time Series',
-      'API Integration',
-    ],
-    links: { github: 'https://github.com/LuizFelipeBarbosa' },
-    classification: 'TOP SECRET',
-  },
-  {
-    featured: true,
     title: "Adorno's Culture Industry in the Algorithmic Age",
     subtitle: 'NLP Research · Media Studies 112',
     description:
@@ -67,6 +45,39 @@ const projects = [
     ],
     links: { github: 'https://github.com/LuizFelipeBarbosa' },
     classification: 'SECRET',
+  },
+  {
+    featured: true,
+    title: 'GeographyGo.fun',
+    subtitle: 'Geography Game Suite · 5 Game Modes',
+    description:
+      'Collection of interactive geography games — Flagle (identify countries from flags), Worldle (country silhouettes), Travle (shortest path between nations), World Quiz, and Continent Quizzes. Built with React 19 + TypeScript, D3-geo for map projections, Three.js for 3D renders, Framer Motion animations, and Supabase for score persistence.',
+    metrics: [],
+    tags: ['React', 'TypeScript', 'D3-geo', 'Three.js', 'Supabase', 'Framer Motion', 'Tailwind'],
+    links: { github: 'https://github.com/LuizFelipeBarbosa/countries-world-game', live: 'https://geographygo.fun' },
+    classification: 'UNCLASSIFIED',
+  },
+  {
+    featured: true,
+    title: 'Kalshi Prediction Market Trading Bot',
+    subtitle: 'Algorithmic Trading System',
+    description:
+      'Built and backtested an algorithmic trading system for Kalshi political prediction markets. Developed signal generation models using statistical analysis of market microstructure and historical pricing patterns.',
+    metrics: [
+      { icon: Target, label: 'Win Rate', value: '52.8%' },
+      { icon: TrendingUp, label: 'Profit Factor', value: '2.36x' },
+      { icon: BarChart3, label: 'Backtested Trades', value: '28,903' },
+    ],
+    tags: [
+      'Python',
+      'asyncio',
+      'Backtesting',
+      'Statistics',
+      'Time Series',
+      'API Integration',
+    ],
+    links: { github: 'https://github.com/LuizFelipeBarbosa' },
+    classification: 'TOP SECRET',
   },
   {
     featured: true,
@@ -102,17 +113,6 @@ const projects = [
     tags: ['LangChain', 'LangGraph', 'Azure AI', 'OCR', 'Vector DB'],
     links: {},
     classification: 'CONFIDENTIAL',
-  },
-  {
-    featured: false,
-    title: 'GeographyGo.fun',
-    subtitle: 'Geography Game Suite · 5 Game Modes',
-    description:
-      'Collection of interactive geography games — Flagle (identify countries from flags), Worldle (country silhouettes), Travle (shortest path between nations), World Quiz, and Continent Quizzes. Built with React 19 + TypeScript, D3-geo for map projections, Three.js for 3D renders, Framer Motion animations, and Supabase for score persistence.',
-    metrics: [],
-    tags: ['React', 'TypeScript', 'D3-geo', 'Three.js', 'Supabase', 'Framer Motion', 'Tailwind'],
-    links: { github: 'https://github.com/LuizFelipeBarbosa/countries-world-game', live: 'https://geographygo.fun' },
-    classification: 'UNCLASSIFIED',
   },
   {
     featured: false,
