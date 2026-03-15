@@ -37,6 +37,20 @@ const projects = [
   },
   {
     featured: true,
+    title: "Adorno's Culture Industry in the Algorithmic Age",
+    subtitle: 'NLP Research · Media Studies 112',
+    description:
+      'Built an NLP comment-classification pipeline on 84,816 YouTube comments across the 15 most-streamed songs of 2025 — going significantly beyond course requirements for a Media Studies class with no technical prerequisites. Applied transformer-based text classification to operationalize Adorno\'s critique categories (Standardization, Pseudo-Individualization, Commodification) as quantitative labels, demonstrating empirical support for regressive listening theory using large-scale social data.',
+    metrics: [
+      { icon: BarChart3, label: 'Comments Analyzed', value: '84,816' },
+      { icon: Target, label: 'Songs', value: '15' },
+    ],
+    tags: ['Python', 'NLP', 'Transformers', 'Text Classification', 'Adorno', 'Media Theory'],
+    links: {},
+    classification: 'DISPATCH',
+  },
+  {
+    featured: true,
     title: 'Longshot Bias Analysis',
     subtitle: 'Kalshi Political Markets Research',
     description:
