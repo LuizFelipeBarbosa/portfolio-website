@@ -95,6 +95,20 @@ export default function About() {
                 <div className="font-mono text-xs text-gray-500 uppercase tracking-wider mb-1">GPA</div>
                 <AnimatedCounter target={3.88} suffix="" decimals={2} />
               </div>
+              <div className="pt-2 border-t border-white/5">
+                <div className="font-mono text-xs text-teal/60 uppercase tracking-wider mb-2">Distinctions</div>
+                <div className="space-y-1.5">
+                  {[
+                    "Dean's Honors List — UC Berkeley: Fall 2024",
+                    "Dean's Honors List — UC Riverside: Winter 2023/24, Spring 2023/24, Fall 2023",
+                  ].map((award) => (
+                    <div key={award} className="flex gap-2 items-start">
+                      <span className="w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0 mt-1.5" />
+                      <span className="font-mono text-xs text-gold/80">{award}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               <div className="w-full h-px bg-teal/10 animate-scan" />
