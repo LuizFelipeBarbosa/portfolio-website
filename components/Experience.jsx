@@ -32,7 +32,7 @@ const experiences = [
     location: 'San Francisco, California',
     period: 'Jun 2025 — Aug 2025',
     description: [
-      'Used Latent Dirichlet Allocation (LDA) to look at passed deals and find reasons why deals did not go through; automated data ingestion, topic modeling, and visualization',
+      'Used Latent Dirichlet Allocation (LDA) for topic modeling on 150,000+ historical deal memos to identify recurring patterns behind failed investments; automated data ingestion, topic modeling, and visualization pipeline',
       'Built a semantic search system using Azure Cognitive Search, LangChain, and LangGraph to quickly and accurately find information within thousands of internal company documents',
       'Integrated Azure Document Intelligence for structured extraction of tables, financials, and text from PDFs and PowerPoint files, feeding outputs into LLM workflows',
     ],
@@ -68,7 +68,7 @@ const experiences = [
     location: 'Berkeley, California',
     period: 'Aug 2024 — Present',
     description: [
-      'Lead strategy and operations for a 15-member Brazilian student organization, driving community growth and campus presence',
+      'Lead strategy and operations for a 20-member Brazilian student organization, driving community growth and campus presence',
       'Oversaw marketing, technology, and digital infrastructure, including launching and maintaining the club website and managing all event promotion channels',
       'Planned and executed large-scale events with 100+ attendees, increasing visibility, engagement, and participation with the Brazilian community across campus',
     ],

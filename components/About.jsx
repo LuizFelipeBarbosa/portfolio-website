@@ -128,8 +128,8 @@ export default function About() {
             <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-4">Distinctions</div>
             <div className="space-y-2">
               {[
-                "Dean's Honors List — UC Berkeley: Fall 2024",
-                "Dean's Honors List — UC Riverside: Fall 2023, Winter/Spring 2023–24",
+                "Dean's List — UC Berkeley: Fall 2024",
+                "Dean's List — UC Riverside: Fall 2023, Winter/Spring 2023–24",
               ].map((award) => (
                 <div key={award} className="flex gap-2 items-start">
                   <span className="w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0 mt-1.5" />
