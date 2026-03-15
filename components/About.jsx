@@ -82,7 +82,7 @@ export default function About() {
           >
             <div className="classified-stamp text-red-500/30">CLASSIFIED</div>
             <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-2">
-              Left Brain &mdash; Logic &amp; Numbers
+              Quantitative Profile
             </div>
             <div className="font-mono text-xs text-gold/60 tracking-wider uppercase mb-6">
               Personnel File &mdash; Active
@@ -118,7 +118,7 @@ export default function About() {
           >
             <div className="classified-stamp text-amber-500/30">DISPATCH</div>
             <div className="font-mono text-xs text-amber-400/60 tracking-wider uppercase mb-2">
-              Right Brain &mdash; Narrative &amp; Impact
+              Media &amp; Policy Profile
             </div>
             <div className="font-mono text-xs text-gold/60 tracking-wider uppercase mb-6">
               Creative Dossier &mdash; Active
