@@ -35,18 +35,11 @@ function AnimatedCounter({ target, suffix = '', decimals = 0 }) {
   )
 }
 
-const stats = [
+const academicStats = [
   { label: 'GPA', value: 3.88, suffix: '', decimals: 2 },
-  { label: 'Backtested Trades', value: 28903, suffix: '+', decimals: 0 },
-  { label: 'Win Rate', value: 52.8, suffix: '%', decimals: 1 },
-  { label: 'Profit Factor', value: 2.36, suffix: 'x', decimals: 2 },
-]
-
-const mediaStats = [
-  { label: 'Films Directed', value: 14, suffix: '', icon: '🎬' },
-  { label: 'Lobbied Congress', value: 1, suffix: '', icon: '🏛️' },
-  { label: 'Languages Spoken', value: 3, suffix: '', icon: '🌎' },
-  { label: 'Events Organized', value: 5, suffix: '+', icon: '🎤' },
+  { label: 'Dean\'s List Awards', value: 4, suffix: '', decimals: 0 },
+  { label: 'Languages Spoken', value: 3, suffix: '', decimals: 0 },
+  { label: 'Majors', value: 2, suffix: '', decimals: 0 },
 ]
 
 export default function About() {
@@ -71,83 +64,52 @@ export default function About() {
           </h2>
         </motion.div>
 
-        {/* Two-brain dimension panels */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {/* Left Brain — Quant */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card p-8 relative overflow-hidden"
-          >
-            <div className="classified-stamp text-red-500/30">CLASSIFIED</div>
-            <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-2">
-              Quantitative Profile
-            </div>
-            <div className="font-mono text-xs text-gold/60 tracking-wider uppercase mb-6">
-              Personnel File &mdash; Active
-            </div>
+        {/* Academic profile panel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="glass-card p-8 relative overflow-hidden mb-12"
+        >
+          <div className="classified-stamp text-red-500/30">CLASSIFIED</div>
+          <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-1">
+            Academic Profile
+          </div>
+          <div className="font-mono text-xs text-gold/60 tracking-wider uppercase mb-6">
+            University of California, Berkeley &mdash; B.A. Mathematics (Statistics) &amp; Media Studies (Law &amp; Policy) &mdash; Expected Dec 2026
+          </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat) => (
-                <div key={stat.label} className="space-y-1">
-                  <AnimatedCounter
-                    target={stat.value}
-                    suffix={stat.suffix}
-                    decimals={stat.decimals}
-                  />
-                  <div className="font-mono text-xs text-gray-500 uppercase tracking-wider">
-                    {stat.label}
-                  </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {academicStats.map((stat) => (
+              <div key={stat.label} className="space-y-1">
+                <AnimatedCounter
+                  target={stat.value}
+                  suffix={stat.suffix}
+                  decimals={stat.decimals}
+                />
+                <div className="font-mono text-xs text-gray-500 uppercase tracking-wider">
+                  {stat.label}
                 </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-white/5">
+            <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-3">Honors</div>
+            <div className="flex flex-wrap gap-2">
+              {["Dean's Honors List — UC Berkeley, Fall 2024", "Dean's Honors List — UC Riverside, Winter 2023/24", "Dean's Honors List — UC Riverside, Spring 2023/24", "Dean's Honors List — UC Riverside, Fall 2023"].map((award) => (
+                <span key={award} className="font-mono text-xs text-gold/80 bg-gold/5 border border-gold/20 rounded px-2 py-1">
+                  {award}
+                </span>
               ))}
             </div>
+          </div>
 
-            {/* Scan line */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="w-full h-px bg-teal/10 animate-scan" />
-            </div>
-          </motion.div>
-
-          {/* Right Brain — Media & Policy */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="glass-card p-8 relative overflow-hidden border-amber-500/20"
-          >
-            <div className="classified-stamp text-amber-500/30">DISPATCH</div>
-            <div className="font-mono text-xs text-amber-400/60 tracking-wider uppercase mb-2">
-              Media &amp; Policy Profile
-            </div>
-            <div className="font-mono text-xs text-gold/60 tracking-wider uppercase mb-6">
-              Creative Dossier &mdash; Active
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              {mediaStats.map((stat) => (
-                <div key={stat.label} className="space-y-1">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-2xl">{stat.icon}</span>
-                    <AnimatedCounter
-                      target={stat.value}
-                      suffix={stat.suffix}
-                      decimals={0}
-                    />
-                  </div>
-                  <div className="font-mono text-xs text-gray-500 uppercase tracking-wider">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Scan line amber */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="w-full h-px bg-amber-500/10 animate-scan" />
-            </div>
-          </motion.div>
-        </div>
+          {/* Scan line */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="w-full h-px bg-teal/10 animate-scan" />
+          </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Education & Bio */}
