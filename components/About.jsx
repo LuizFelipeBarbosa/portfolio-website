@@ -66,14 +66,14 @@ export default function About() {
           </h2>
         </motion.div>
 
-        {/* Intel Brief — three columns */}
+        {/* Intel Brief — bento grid */}
         <motion.div
           initial={hasMounted ? { opacity: 0, y: 30 } : false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid md:grid-cols-3 gap-6 mb-12 items-start"
+          className="grid md:grid-cols-3 md:grid-rows-[1fr_auto] gap-4 mb-12"
         >
-          {/* Academic Record */}
+          {/* Academic Record — top left */}
           <div className="glass-card p-6 relative overflow-hidden">
             <div className="classified-stamp text-red-500/30">CLASSIFIED</div>
             <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-4">Academic Record</div>
@@ -95,28 +95,14 @@ export default function About() {
                 <div className="font-mono text-xs text-gray-500 uppercase tracking-wider mb-1">GPA</div>
                 <AnimatedCounter target={3.88} suffix="" decimals={2} />
               </div>
-              <div className="pt-2 border-t border-white/5">
-                <div className="font-mono text-xs text-teal/60 uppercase tracking-wider mb-2">Distinctions</div>
-                <div className="space-y-1.5">
-                  {[
-                    "Dean's Honors List — UC Berkeley: Fall 2024",
-                    "Dean's Honors List — UC Riverside: Winter 2023/24, Spring 2023/24, Fall 2023",
-                  ].map((award) => (
-                    <div key={award} className="flex gap-2 items-start">
-                      <span className="w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0 mt-1.5" />
-                      <span className="font-mono text-xs text-gold/80">{award}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               <div className="w-full h-px bg-teal/10 animate-scan" />
             </div>
           </div>
 
-          {/* Subject Profile */}
-          <div className="glass-card p-6 relative overflow-hidden md:col-span-2">
+          {/* Subject Profile — right, spans 2 rows */}
+          <div className="glass-card p-6 relative overflow-hidden md:col-span-2 md:row-span-2">
             <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-4">Subject Profile</div>
             <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
               <p>
@@ -134,6 +120,27 @@ export default function About() {
             </div>
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               <div className="w-full h-px bg-teal/10 animate-scan" />
+            </div>
+          </div>
+
+          {/* Distinctions — bottom left */}
+          <div className="glass-card p-6 relative overflow-hidden">
+            <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-4">Distinctions</div>
+            <div className="space-y-2">
+              {[
+                "Dean's Honors List — UC Berkeley: Fall 2024",
+                "Dean's Honors List — UC Riverside: Winter 2023/24",
+                "Dean's Honors List — UC Riverside: Spring 2023/24",
+                "Dean's Honors List — UC Riverside: Fall 2023",
+              ].map((award) => (
+                <div key={award} className="flex gap-2 items-start">
+                  <span className="w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0 mt-1.5" />
+                  <span className="font-mono text-xs text-gold/80">{award}</span>
+                </div>
+              ))}
+            </div>
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+              <div className="w-full h-px bg-gold/10 animate-scan" />
             </div>
           </div>
         </motion.div>
