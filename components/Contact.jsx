@@ -20,8 +20,8 @@ const links = [
   {
     icon: Mail,
     label: 'Email',
-    href: 'mailto:luizfbarbosa@berkeley.edu',
-    handle: 'luizfbarbosa@berkeley.edu',
+    href: 'mailto:lfpmb1@icloud.com',
+    handle: 'lfpmb1@icloud.com',
   },
 ]
 

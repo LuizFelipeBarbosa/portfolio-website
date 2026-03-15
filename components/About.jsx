@@ -227,9 +227,8 @@ export default function About() {
               </div>
               <div className="space-y-2">
                 {[
-                  "Dean's Honors List \u2014 UC Berkeley (2024\u20132025)",
-                  "Dean's Honors List \u2014 UC Riverside (2023\u20132024)",
-                  'UK Mathematics Trust \u2014 Senior Gold (2021)',
+                  "Dean's Honors List — UC Berkeley: Fall 2024",
+                  "Dean's Honors List — UC Riverside: Winter 2023/24, Spring 2023/24, Fall 2023",
                 ].map((award, i) => (
                   <div
                     key={i}
