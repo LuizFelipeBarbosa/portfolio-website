@@ -104,13 +104,13 @@ const projects = [
   },
   {
     featured: false,
-    title: 'Geography Game',
-    subtitle: 'Interactive Web Application',
+    title: 'GeographyGo.fun',
+    subtitle: 'Interactive Geography Quiz Game',
     description:
-      'Interactive geography quiz game inspired by SPORCLE with a zoomable world map, country identification challenges, and score tracking.',
+      'Interactive geography quiz game inspired by SPORCLE with a zoomable world map, country identification challenges, and score tracking. Built with Next.js for fast server-side rendering and smooth map interactions.',
     metrics: [],
-    tags: ['React', 'JavaScript', 'UI/UX', 'SVG Maps'],
-    links: { live: 'https://geographyfun.netlify.app' },
+    tags: ['Next.js', 'JavaScript', 'UI/UX', 'SVG Maps'],
+    links: { live: 'https://geographygo.fun' },
     classification: 'UNCLASSIFIED',
   },
   {
