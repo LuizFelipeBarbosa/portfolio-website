@@ -41,9 +41,9 @@ const projects = [
     title: "Adorno's Culture Industry in the Algorithmic Age",
     subtitle: 'NLP Research · Media Studies 112',
     description:
-      'Designed and executed an NLP comment-classification pipeline on 84,816 YouTube comments across the 15 most-streamed songs of 2025, going significantly beyond course requirements for a Media Studies class with no technical prerequisites. Applied transformer-based text classification to operationalize Adorno\'s critique categories (Standardization, Pseudo-Individualization, Commodification) as quantitative labels with confidence scoring. Demonstrated empirical support for regressive listening theory using large-scale social data.',
+      'Designed and executed an NLP comment-classification pipeline on 84,000+ YouTube comments across the 15 most-streamed songs of 2025, going significantly beyond course requirements for a Media Studies class with no technical prerequisites. Applied transformer-based text classification to operationalize Adorno\'s critique categories (Standardization, Pseudo-Individualization, Commodification) as quantitative labels with confidence scoring. Demonstrated empirical support for regressive listening theory using large-scale social data.',
     metrics: [
-      { icon: BarChart3, label: 'Comments Analyzed', value: '84,816' },
+      { icon: BarChart3, label: 'Comments Analyzed', value: '84,000+' },
       { icon: Target, label: 'Songs', value: '15' },
     ],
     tags: ['Python', 'NLP', 'Transformers', 'Text Classification', 'Adorno', 'Media Theory'],
@@ -139,21 +139,19 @@ function ProjectCard({ project, index, featured = false }) {
       initial={hasMounted ? { opacity: 0, y: 30 } : false}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`glass-card relative overflow-hidden group transition-all duration-300 ${
-        isMedia ? 'hover:border-amber-400/30' : 'hover:border-teal/30'
-      } ${featured ? 'p-8' : 'p-6'}`}
+      className={`glass-card relative overflow-hidden group transition-all duration-300 ${isMedia ? 'hover:border-amber-400/30' : 'hover:border-teal/30'
+        } ${featured ? 'p-8' : 'p-6'}`}
     >
       {/* Classification stamp */}
       <div
-        className={`classified-stamp ${
-          project.classification === 'TOP SECRET'
+        className={`classified-stamp ${project.classification === 'TOP SECRET'
             ? 'text-red-500/30'
             : project.classification === 'SECRET'
               ? 'text-gold/30'
               : project.classification === 'DISPATCH'
                 ? 'text-amber-400/30'
                 : 'text-gray-500/20'
-        }`}
+          }`}
       >
         {project.classification}
       </div>
@@ -205,11 +203,10 @@ function ProjectCard({ project, index, featured = false }) {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className={`px-2 py-0.5 text-[10px] font-mono rounded ${
-              isMedia
+            className={`px-2 py-0.5 text-[10px] font-mono rounded ${isMedia
                 ? 'text-amber-400/60 bg-amber-400/5 border border-amber-400/10'
                 : 'text-teal/60 bg-teal/5 border border-teal/10'
-            }`}
+              }`}
           >
             {tag}
           </span>
