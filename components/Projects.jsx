@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useHasMounted } from '../lib/useHasMounted'
 import {
   ExternalLink,
   Github,
@@ -129,12 +130,13 @@ const projects = [
 function ProjectCard({ project, index, featured = false }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
+  const hasMounted = useHasMounted()
   const isMedia = project.category === 'media'
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={hasMounted ? { opacity: 0, y: 30 } : false}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={`glass-card relative overflow-hidden group transition-all duration-300 ${
@@ -246,6 +248,7 @@ function ProjectCard({ project, index, featured = false }) {
 }
 
 export default function Projects() {
+  const hasMounted = useHasMounted()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -253,7 +256,7 @@ export default function Projects() {
     <section id="projects" className="relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={hasMounted ? { opacity: 0, x: -30 } : false}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="mb-16"

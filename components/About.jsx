@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useHasMounted } from '../lib/useHasMounted'
 
 function AnimatedCounter({ target, suffix = '', decimals = 0 }) {
   const [count, setCount] = useState(0)
@@ -45,12 +46,13 @@ const academicStats = [
 export default function About() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
+  const hasMounted = useHasMounted()
 
   return (
     <section id="about" className="relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={hasMounted ? { opacity: 0, x: -30 } : false}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="mb-16"
@@ -66,7 +68,7 @@ export default function About() {
 
         {/* Academic profile panel */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={hasMounted ? { opacity: 0, y: 30 } : false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="glass-card p-8 relative overflow-hidden mb-12"
@@ -114,7 +116,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Education & Bio */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={hasMounted ? { opacity: 0, y: 30 } : false}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-6"
@@ -178,7 +180,7 @@ export default function About() {
 
           {/* Awards */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={hasMounted ? { opacity: 0, y: 30 } : false}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
             className="space-y-6"

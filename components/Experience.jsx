@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import { useHasMounted } from '../lib/useHasMounted'
 import { motion, useInView } from 'framer-motion'
 import { Briefcase, Users, Film } from 'lucide-react'
 
@@ -76,6 +77,7 @@ const experiences = [
 ]
 
 function TimelineEntry({ experience, index }) {
+  const hasMounted = useHasMounted()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
   const isMedia = experience.type === 'media'
@@ -85,7 +87,7 @@ function TimelineEntry({ experience, index }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: -30 }}
+      initial={hasMounted ? { opacity: 0, x: -30 } : false}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="relative pl-12 md:pl-20"
@@ -146,12 +148,13 @@ function TimelineEntry({ experience, index }) {
 export default function Experience() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
+  const hasMounted = useHasMounted()
 
   return (
     <section id="experience" className="relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6" ref={ref}>
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={hasMounted ? { opacity: 0, x: -30 } : false}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="mb-16"
