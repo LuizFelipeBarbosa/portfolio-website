@@ -69,6 +69,7 @@ const experiences = [
     description: [
       'Lead strategy and operations for a 15-member Brazilian student organization, driving community growth and campus presence',
       'Oversaw marketing, technology, and digital infrastructure, including launching and maintaining the club website and managing all event promotion channels',
+      'Planned and executed large-scale events with 100+ attendees, increasing visibility, engagement, and participation with the Brazilian community across campus',
     ],
     tags: ['Leadership', 'React', 'Marketing', 'Web Development'],
   },

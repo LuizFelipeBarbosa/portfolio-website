@@ -40,7 +40,7 @@ const projects = [
     title: "Adorno's Culture Industry in the Algorithmic Age",
     subtitle: 'NLP Research · Media Studies 112',
     description:
-      'Built an NLP comment-classification pipeline on 84,816 YouTube comments across the 15 most-streamed songs of 2025 — going significantly beyond course requirements for a Media Studies class with no technical prerequisites. Applied transformer-based text classification to operationalize Adorno\'s critique categories (Standardization, Pseudo-Individualization, Commodification) as quantitative labels, demonstrating empirical support for regressive listening theory using large-scale social data.',
+      'Designed and executed an NLP comment-classification pipeline on 84,816 YouTube comments across the 15 most-streamed songs of 2025, going significantly beyond course requirements for a Media Studies class with no technical prerequisites. Applied transformer-based text classification to operationalize Adorno\'s critique categories (Standardization, Pseudo-Individualization, Commodification) as quantitative labels with confidence scoring. Demonstrated empirical support for regressive listening theory using large-scale social data.',
     metrics: [
       { icon: BarChart3, label: 'Comments Analyzed', value: '84,816' },
       { icon: Target, label: 'Songs', value: '15' },
@@ -51,10 +51,10 @@ const projects = [
   },
   {
     featured: true,
-    title: 'Longshot Bias Analysis',
+    title: 'Longshot Bias in Prediction Markets',
     subtitle: 'Kalshi Political Markets Research',
     description:
-      'Quantitative analysis of longshot bias in Kalshi political prediction markets. Implemented VWAP trace analysis and applied Snowberg & Wolfers framework to identify systematic pricing inefficiencies in low-probability political events.',
+      'Research notebook analyzing the longshot bias and calibration of 18,000 Kalshi political speech mention contracts. Constructed VWAP price traces, fee-adjusted return models, and maker/taker pricing analysis. Reviewed related academic literature and tested for exploitable edges in mispriced long-shot contracts.',
     metrics: [],
     tags: [
       'Python',
