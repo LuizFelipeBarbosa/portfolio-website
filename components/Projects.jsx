@@ -8,6 +8,8 @@ import {
   TrendingUp,
   BarChart3,
   Target,
+  Film,
+  Clapperboard,
 } from 'lucide-react'
 
 const projects = [
@@ -52,6 +54,30 @@ const projects = [
     classification: 'SECRET',
   },
   {
+    featured: true,
+    title: 'Ghosts of Adelanto',
+    subtitle: 'Documentary · Associate Producer',
+    category: 'media',
+    description:
+      'Associate producer on documentary investigating immigration detention in Adelanto, CA. Organized a Congressional lobbying event in Washington, D.C. with 50+ UC students and Congressman Mark Takano, connecting documentary storytelling with direct policy advocacy.',
+    metrics: [],
+    tags: ['Documentary', 'Policy', 'Advocacy', 'Congressional Lobbying', 'Event Organizing'],
+    links: {},
+    classification: 'DISPATCH',
+  },
+  {
+    featured: false,
+    title: 'Faculty Interview Series',
+    subtitle: 'UCR Media Department · Director',
+    category: 'media',
+    description:
+      'Directed and produced 14 professional faculty interview videos for the UC Riverside Media and Cultural Studies Department. Managed full production pipeline from pre-production through post.',
+    metrics: [],
+    tags: ['Film', 'Production', 'Direction', 'Adobe Premiere'],
+    links: {},
+    classification: 'UNCLASSIFIED',
+  },
+  {
     featured: false,
     title: 'AI Document Intelligence Pipeline',
     subtitle: 'Industry Ventures',
@@ -89,6 +115,7 @@ const projects = [
 function ProjectCard({ project, index, featured = false }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
+  const isMedia = project.category === 'media'
 
   return (
     <motion.div
@@ -96,9 +123,9 @@ function ProjectCard({ project, index, featured = false }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`glass-card relative overflow-hidden group hover:border-teal/30 transition-all duration-300 ${
-        featured ? 'p-8' : 'p-6'
-      }`}
+      className={`glass-card relative overflow-hidden group transition-all duration-300 ${
+        isMedia ? 'hover:border-amber-400/30' : 'hover:border-teal/30'
+      } ${featured ? 'p-8' : 'p-6'}`}
     >
       {/* Classification stamp */}
       <div
@@ -107,14 +134,26 @@ function ProjectCard({ project, index, featured = false }) {
             ? 'text-red-500/30'
             : project.classification === 'SECRET'
               ? 'text-gold/30'
-              : 'text-gray-500/20'
+              : project.classification === 'DISPATCH'
+                ? 'text-amber-400/30'
+                : 'text-gray-500/20'
         }`}
       >
         {project.classification}
       </div>
 
+      {/* Media badge */}
+      {isMedia && (
+        <div className="flex items-center gap-1.5 mb-3">
+          <Clapperboard size={14} className="text-amber-400" />
+          <span className="font-mono text-[10px] text-amber-400/80 uppercase tracking-wider">
+            Media &amp; Policy
+          </span>
+        </div>
+      )}
+
       <div className="mb-4">
-        <div className="font-mono text-xs text-gold/60 uppercase tracking-wider mb-1">
+        <div className={`font-mono text-xs uppercase tracking-wider mb-1 ${isMedia ? 'text-amber-400/60' : 'text-gold/60'}`}>
           {project.subtitle}
         </div>
         <h3
@@ -150,7 +189,11 @@ function ProjectCard({ project, index, featured = false }) {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="px-2 py-0.5 text-[10px] font-mono text-teal/60 bg-teal/5 border border-teal/10 rounded"
+            className={`px-2 py-0.5 text-[10px] font-mono rounded ${
+              isMedia
+                ? 'text-amber-400/60 bg-amber-400/5 border border-amber-400/10'
+                : 'text-teal/60 bg-teal/5 border border-teal/10'
+            }`}
           >
             {tag}
           </span>
@@ -182,7 +225,7 @@ function ProjectCard({ project, index, featured = false }) {
 
       {/* Hover glow */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal/5 to-transparent" />
+        <div className={`absolute inset-0 bg-gradient-to-br ${isMedia ? 'from-amber-400/5' : 'from-teal/5'} to-transparent`} />
       </div>
     </motion.div>
   )

@@ -6,9 +6,11 @@ import { ChevronDown } from 'lucide-react'
 
 const titles = [
   'Mathematician',
+  'Filmmaker',
   'Quant Analyst',
+  'Policy Advocate',
   'Data Scientist',
-  'Policy Thinker',
+  'Storyteller',
   'Researcher',
 ]
 
@@ -303,8 +305,8 @@ export default function Hero() {
           </div>
 
           <p className="font-body text-gray-400 max-w-lg mx-auto mb-10 text-sm md:text-base">
-            UC Berkeley &middot; Mathematics &amp; Statistics &middot;
-            Quantitative Research
+            UC Berkeley &middot; Mathematics &amp; Statistics + Media
+            Studies &middot; Where Numbers Meet Narrative
           </p>
 
           <div className="flex gap-4 justify-center">

@@ -50,6 +50,20 @@ const skillCategories = [
     ],
   },
   {
+    name: 'Media & Communication',
+    accent: 'amber',
+    skills: [
+      { name: 'Film Production', level: 90 },
+      { name: 'Video Direction', level: 85 },
+      { name: 'Narrative Framing', level: 80 },
+      { name: 'Policy Advocacy', level: 80 },
+      { name: 'Event Organizing', level: 85 },
+      { name: 'Adobe Suite', level: 75 },
+      { name: 'Figma', level: 70 },
+      { name: 'Graphic Design', level: 65 },
+    ],
+  },
+  {
     name: 'Spoken Languages',
     skills: [
       { name: 'English', level: 100 },
@@ -62,6 +76,7 @@ const skillCategories = [
 function SkillCategory({ category, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
+  const isAmber = category.accent === 'amber'
 
   return (
     <motion.div
@@ -69,9 +84,9 @@ function SkillCategory({ category, index }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass-card p-6"
+      className={`glass-card p-6 ${isAmber ? 'border-amber-400/10' : ''}`}
     >
-      <h3 className="font-heading font-bold text-sm text-gold uppercase tracking-wider mb-5">
+      <h3 className={`font-heading font-bold text-sm uppercase tracking-wider mb-5 ${isAmber ? 'text-amber-400' : 'text-gold'}`}>
         {category.name}
       </h3>
       <div className="space-y-4">
@@ -81,13 +96,13 @@ function SkillCategory({ category, index }) {
               <span className="font-mono text-sm text-gray-300">
                 {skill.name}
               </span>
-              <span className="font-mono text-xs text-teal/60">
+              <span className={`font-mono text-xs ${isAmber ? 'text-amber-400/60' : 'text-teal/60'}`}>
                 {skill.level}%
               </span>
             </div>
             <div className="h-1.5 bg-midnight-100 rounded-full overflow-hidden">
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-teal to-teal-light"
+                className={`h-full rounded-full bg-gradient-to-r ${isAmber ? 'from-amber-500 to-amber-300' : 'from-teal to-teal-light'}`}
                 initial={{ width: 0 }}
                 animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
                 transition={{

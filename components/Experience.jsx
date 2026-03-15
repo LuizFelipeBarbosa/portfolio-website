@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Briefcase, Users } from 'lucide-react'
+import { Briefcase, Users, Film } from 'lucide-react'
 
 const experiences = [
   {
@@ -39,6 +39,32 @@ const experiences = [
     tags: ['Python', 'LangChain', 'LangGraph', 'Azure AI', 'NLP', 'ML'],
   },
   {
+    type: 'media',
+    title: 'Director & Producer',
+    company: 'UCR Media and Cultural Studies Dept',
+    location: 'Riverside, CA',
+    period: 'Mar 2024 \u2014 Jun 2024',
+    description: [
+      'Directed and produced 14 professional faculty interview videos for the department',
+      'Managed full production pipeline from pre-production planning through post-production editing',
+      'Collaborated with faculty to craft compelling narratives highlighting research and teaching',
+    ],
+    tags: ['Film Direction', 'Video Production', 'Adobe Premiere', 'Storytelling'],
+  },
+  {
+    type: 'media',
+    title: 'Associate Producer',
+    company: 'Ghosts of Adelanto Documentary',
+    location: 'Washington, D.C. / Riverside, CA',
+    period: 'Sep 2023 \u2014 Dec 2023',
+    description: [
+      'Associate produced documentary investigating immigration detention in Adelanto, CA',
+      'Organized Congressional lobbying event with 50+ UC students and Congressman Mark Takano in Washington, D.C.',
+      'Coordinated logistics for advocacy campaign connecting documentary storytelling with policy action',
+    ],
+    tags: ['Documentary', 'Policy Advocacy', 'Event Organizing', 'Congressional Lobbying'],
+  },
+  {
     type: 'leadership',
     title: 'Co-President, Technology & Marketing',
     company: 'BRASA UC Berkeley',
@@ -55,7 +81,9 @@ const experiences = [
 function TimelineEntry({ experience, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-50px' })
-  const Icon = experience.type === 'work' ? Briefcase : Users
+  const isMedia = experience.type === 'media'
+  const Icon = experience.type === 'work' ? Briefcase : experience.type === 'media' ? Film : Users
+  const accent = isMedia ? 'amber-400' : 'teal'
 
   return (
     <motion.div
@@ -66,16 +94,16 @@ function TimelineEntry({ experience, index }) {
       className="relative pl-12 md:pl-20"
     >
       {/* Timeline dot */}
-      <div className="absolute left-[10px] md:left-[26px] top-2 w-3 h-3 rounded-full bg-teal glow-teal" />
+      <div className={`absolute left-[10px] md:left-[26px] top-2 w-3 h-3 rounded-full ${isMedia ? 'bg-amber-400 shadow-[0_0_20px_rgba(251,191,36,0.3)]' : 'bg-teal glow-teal'}`} />
 
-      <div className="glass-card p-6 md:p-8 relative overflow-hidden group hover:border-teal/30 transition-colors">
-        <div className="classified-stamp text-teal/20 opacity-0 group-hover:opacity-100 transition-opacity">
-          {experience.type === 'work' ? 'ACTIVE' : 'LEADERSHIP'}
+      <div className={`glass-card p-6 md:p-8 relative overflow-hidden group transition-colors ${isMedia ? 'hover:border-amber-400/30' : 'hover:border-teal/30'}`}>
+        <div className={`classified-stamp opacity-0 group-hover:opacity-100 transition-opacity ${isMedia ? 'text-amber-400/20' : 'text-teal/20'}`}>
+          {experience.type === 'work' ? 'ACTIVE' : experience.type === 'media' ? 'PRODUCTION' : 'LEADERSHIP'}
         </div>
 
         <div className="flex flex-wrap items-start gap-3 mb-4">
-          <div className="p-2 bg-teal/10 rounded">
-            <Icon size={16} className="text-teal" />
+          <div className={`p-2 rounded ${isMedia ? 'bg-amber-400/10' : 'bg-teal/10'}`}>
+            <Icon size={16} className={isMedia ? 'text-amber-400' : 'text-teal'} />
           </div>
           <div className="flex-1 min-w-0">
             <h3 className="font-heading font-bold text-lg text-white">
@@ -97,7 +125,7 @@ function TimelineEntry({ experience, index }) {
         <ul className="space-y-2 mb-4">
           {experience.description.map((item, j) => (
             <li key={j} className="flex gap-2 text-sm text-gray-400">
-              <span className="text-teal mt-1 flex-shrink-0">&rsaquo;</span>
+              <span className={`${isMedia ? 'text-amber-400' : 'text-teal'} mt-1 flex-shrink-0`}>&rsaquo;</span>
               <span>{item}</span>
             </li>
           ))}
@@ -107,7 +135,7 @@ function TimelineEntry({ experience, index }) {
           {experience.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-1 text-xs font-mono text-teal/70 bg-teal/5 border border-teal/10 rounded"
+              className={`px-2 py-1 text-xs font-mono rounded ${isMedia ? 'text-amber-400/70 bg-amber-400/5 border border-amber-400/10' : 'text-teal/70 bg-teal/5 border border-teal/10'}`}
             >
               {tag}
             </span>

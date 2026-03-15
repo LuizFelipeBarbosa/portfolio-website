@@ -20,9 +20,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: 'Luiz Felipe Barbosa | Mathematician & Quant Analyst',
+  title: 'Luiz Felipe Barbosa | Mathematician · Filmmaker · Policy Advocate',
   description:
-    'UC Berkeley Mathematics & Statistics student specializing in quantitative analysis, prediction markets, and geopolitical research.',
+    'UC Berkeley double major in Mathematics/Statistics and Media Studies (Law & Policy). Quantitative analysis, documentary filmmaking, and policy advocacy.',
   icons: {
     icon: '/icon.png',
   },
