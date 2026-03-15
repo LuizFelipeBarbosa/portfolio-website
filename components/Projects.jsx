@@ -105,12 +105,12 @@ const projects = [
   {
     featured: false,
     title: 'GeographyGo.fun',
-    subtitle: 'Interactive Geography Quiz Game',
+    subtitle: 'Geography Game Suite · 5 Game Modes',
     description:
-      'Interactive geography quiz game inspired by SPORCLE with a zoomable world map, country identification challenges, and score tracking. Built with Next.js for fast server-side rendering and smooth map interactions.',
+      'Collection of interactive geography games — Flagle (identify countries from flags), Worldle (country silhouettes), Travle (shortest path between nations), World Quiz, and Continent Quizzes. Built with React 19 + TypeScript, D3-geo for map projections, Three.js for 3D renders, Framer Motion animations, and Supabase for score persistence.',
     metrics: [],
-    tags: ['Next.js', 'JavaScript', 'UI/UX', 'SVG Maps'],
-    links: { live: 'https://geographygo.fun' },
+    tags: ['React', 'TypeScript', 'D3-geo', 'Three.js', 'Supabase', 'Framer Motion', 'Tailwind'],
+    links: { github: 'https://github.com/LuizFelipeBarbosa/countries-world-game', live: 'https://geographygo.fun' },
     classification: 'UNCLASSIFIED',
   },
   {
