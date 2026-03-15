@@ -115,7 +115,7 @@ export default function About() {
                 I am most drawn to problems that sit at the intersection of quantitative reasoning, information flow, and real-world events. I see data not just as numbers, but as a real-time, quantifiable reflection of how narratives, incentives, and beliefs move through the world — and I find that deeply compelling.
               </p>
               <p>
-                Outside of coursework, I build things. I have deployed a live algorithmic trading system for prediction markets, published NLP research on cultural theory and social data, and built geography games used by thousands. I approach all of it the same way: with genuine curiosity and a bias toward action.
+                Outside of coursework, I build things. I have deployed a live algorithmic trading system for prediction markets, published NLP research on cultural theory and social data, and built geography games. I approach all of it the same way: with genuine curiosity and a bias toward action.
               </p>
             </div>
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
