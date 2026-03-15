@@ -71,7 +71,7 @@ export default function About() {
           initial={hasMounted ? { opacity: 0, y: 30 } : false}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid md:grid-cols-3 gap-6 mb-12"
+          className="grid md:grid-cols-3 gap-6 mb-12 items-start"
         >
           {/* Academic Record */}
           <div className="glass-card p-6 relative overflow-hidden">
@@ -101,34 +101,22 @@ export default function About() {
             </div>
           </div>
 
-          {/* Distinctions */}
-          <div className="glass-card p-6 relative overflow-hidden">
-            <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-4">Distinctions</div>
-            <div className="space-y-2">
-              {[
-                "Dean's Honors List — UC Berkeley, Fall 2024",
-                "Dean's Honors List — UC Riverside, Spring 2024",
-                "Dean's Honors List — UC Riverside, Winter 2024",
-                "Dean's Honors List — UC Riverside, Fall 2023",
-              ].map((award) => (
-                <div key={award} className="flex gap-2 items-start">
-                  <span className="text-gold mt-1 flex-shrink-0">›</span>
-                  <span className="font-mono text-xs text-gold/80">{award}</span>
-                </div>
-              ))}
-            </div>
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="w-full h-px bg-gold/10 animate-scan" />
-            </div>
-          </div>
-
           {/* Subject Profile */}
-          <div className="glass-card p-6 relative overflow-hidden">
+          <div className="glass-card p-6 relative overflow-hidden md:col-span-2">
             <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-4">Subject Profile</div>
-            <div className="space-y-2 text-sm text-gray-300 leading-relaxed">
-              <p>Double major bridging quantitative analysis and media/policy research. Born in São Paulo, Brazil.</p>
-              <p>Applies statistical modeling and NLP to financial markets and cultural theory. Fluent in English, Portuguese, and Spanish.</p>
-              <p>Co-President of BRASA UC Berkeley. Former Data Science Intern at Industry Ventures.</p>
+            <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
+              <p>
+                I grew up in an environment where questions were valued more than answers — a noisy hub of exchange where people constantly debated business, art, science, and current events. That shaped the way I think and inspired my decision to pursue a double major in Mathematics and Media Studies.
+              </p>
+              <p>
+                These two fields help me view the world in fundamentally different ways. Mathematics taught me rigor: how to think clearly, break down difficult problems, and find structure within chaos. Media Studies — and in particular my passion for geopolitics — taught me to examine how narratives are constructed, how perspectives are circulated, and how information is contested. Together, they push me toward interdisciplinary and unorthodox approaches, framing problems both analytically and creatively.
+              </p>
+              <p>
+                I am most drawn to problems that sit at the intersection of quantitative reasoning, information flow, and real-world events. I see data not just as numbers, but as a real-time, quantifiable reflection of how narratives, incentives, and beliefs move through the world — and I find that deeply compelling.
+              </p>
+              <p>
+                Outside of coursework, I build things. I have deployed a live algorithmic trading system for prediction markets, published NLP research on cultural theory and social data, and built geography games used by thousands. I approach all of it the same way: with genuine curiosity and a bias toward action.
+              </p>
             </div>
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               <div className="w-full h-px bg-teal/10 animate-scan" />
