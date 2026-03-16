@@ -1,149 +1,38 @@
-'use client'
-
-import { useRef, useEffect, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { useHasMounted } from '../lib/useHasMounted'
-
-function AnimatedCounter({ target, suffix = '', decimals = 0 }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true })
-
-  useEffect(() => {
-    if (!inView) return
-    let start = 0
-    const step = target / 60
-    const interval = setInterval(() => {
-      start += step
-      if (start >= target) {
-        setCount(target)
-        clearInterval(interval)
-      } else {
-        setCount(start)
-      }
-    }, 16)
-    return () => clearInterval(interval)
-  }, [inView, target])
-
-  return (
-    <span
-      ref={ref}
-      className="font-mono text-3xl md:text-4xl font-bold text-teal"
-    >
-      {decimals > 0 ? count.toFixed(decimals) : Math.floor(count).toLocaleString()}
-      {suffix}
-    </span>
-  )
-}
-
-const academicStats = [
-  { label: 'GPA', value: 3.88, suffix: '', decimals: 2 },
-  { label: 'Dean\'s List Awards', value: 4, suffix: '', decimals: 0 },
-  { label: 'Languages Spoken', value: 3, suffix: '', decimals: 0 },
-  { label: 'Majors', value: 2, suffix: '', decimals: 0 },
-]
-
 export default function About() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
-  const hasMounted = useHasMounted()
-
   return (
-    <section id="about" className="relative py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-6" ref={ref}>
-        <motion.div
-          initial={hasMounted ? { opacity: 0, x: -30 } : false}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <div className="font-mono text-xs text-teal/60 tracking-[0.2em] uppercase mb-2">
-            Section 01
-          </div>
-          <h2 className="section-heading">
-            <span className="text-white">INTEL</span>{' '}
-            <span className="text-teal">BRIEF</span>
-          </h2>
-        </motion.div>
+    <section id="about" className="py-20 md:py-28">
+      <div className="max-w-3xl mx-auto px-6">
+        <p className="text-xs uppercase tracking-widest text-[#999] mb-6">
+          About
+        </p>
 
-        {/* Intel Brief — bento grid */}
-        <motion.div
-          initial={hasMounted ? { opacity: 0, y: 30 } : false}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid md:grid-cols-3 gap-4 mb-12 md:items-stretch"
-        >
-          {/* Academic Record — top left */}
-          <div className="glass-card p-6 relative overflow-hidden">
-            <div className="classified-stamp text-red-500/30">CLASSIFIED</div>
-            <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-4">Academic Record</div>
-            <div className="space-y-3">
-              <div>
-                <div className="font-mono text-xs text-gray-500 uppercase tracking-wider mb-1">Institution</div>
-                <div className="text-white text-sm font-semibold">University of California, Berkeley</div>
-              </div>
-              <div>
-                <div className="font-mono text-xs text-gray-500 uppercase tracking-wider mb-1">Degree</div>
-                <div className="text-teal text-sm">B.A. Mathematics (Statistics)</div>
-                <div className="text-amber-400 text-sm">B.A. Media Studies (Law &amp; Policy)</div>
-              </div>
-              <div>
-                <div className="font-mono text-xs text-gray-500 uppercase tracking-wider mb-1">Expected</div>
-                <div className="text-gold font-mono text-sm">December 2026</div>
-              </div>
-              <div className="pt-2 border-t border-white/5">
-                <div className="font-mono text-xs text-gray-500 uppercase tracking-wider mb-1">GPA</div>
-                <AnimatedCounter target={3.88} suffix="" decimals={2} />
-              </div>
-            </div>
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="w-full h-px bg-teal/10 animate-scan" />
-            </div>
-          </div>
+        <div className="space-y-4 text-[#444] leading-relaxed">
+          <p>
+            I&apos;m a double major at UC Berkeley studying Mathematics &amp; Statistics
+            and Media Studies with a concentration in Law &amp; Policy. Mathematics
+            taught me rigor — how to break down difficult problems and find
+            structure within chaos. Media Studies taught me how narratives are
+            constructed, how information is contested, and why framing matters.
+          </p>
+          <p>
+            I&apos;m most drawn to problems at the intersection of quantitative
+            reasoning and real-world events — quantitative finance, algorithmic
+            trading, prediction markets, and applied statistics. I see data not
+            just as numbers, but as a real-time reflection of how narratives,
+            incentives, and beliefs move through the world.
+          </p>
+          <p>
+            Outside of coursework, I&apos;m also a filmmaker and policy advocate. I
+            served as associate producer on the documentary <em>Ghosts of
+            Adelanto</em>, investigating immigration detention, and organized a
+            Congressional lobbying event with 50+ students and Congressman Mark
+            Takano.
+          </p>
+        </div>
 
-          {/* Subject Profile — right, spans 2 rows */}
-          <div className="glass-card p-6 relative overflow-hidden md:col-span-2 md:row-span-2">
-            <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-4">Subject Profile</div>
-            <div className="space-y-3 text-sm text-gray-300 leading-relaxed">
-              <p>
-                I grew up in an environment where questions were valued more than answers — a noisy hub of exchange where people constantly debated business, art, science, and current events. That shaped the way I think and inspired my decision to pursue a double major in Mathematics and Media Studies.
-              </p>
-              <p>
-                These two fields help me view the world in fundamentally different ways. Mathematics taught me rigor: how to think clearly, break down difficult problems, and find structure within chaos. Media Studies — and in particular my passion for geopolitics — taught me to examine how narratives are constructed, how perspectives are circulated, and how information is contested. Together, they push me toward interdisciplinary and unorthodox approaches, framing problems both analytically and creatively.
-              </p>
-              <p>
-                I am most drawn to problems that sit at the intersection of quantitative reasoning, information flow, and real-world events. I see data not just as numbers, but as a real-time, quantifiable reflection of how narratives, incentives, and beliefs move through the world — and I find that deeply compelling.
-              </p>
-              <p>
-                Outside of coursework, I build things. I have deployed a live algorithmic trading system for prediction markets, published NLP research on cultural theory and social data, and built geography games. I approach all of it the same way: with genuine curiosity and a bias toward action.
-              </p>
-            </div>
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="w-full h-px bg-teal/10 animate-scan" />
-            </div>
-          </div>
-
-          {/* Distinctions — bottom left */}
-          <div className="glass-card p-6 relative overflow-hidden">
-            <div className="font-mono text-xs text-teal/60 tracking-wider uppercase mb-4">Distinctions</div>
-            <div className="space-y-2">
-              {[
-                "Dean's List — UC Berkeley: Fall 2024",
-                "Dean's List — UC Riverside: Fall 2023, Winter/Spring 2023–24",
-              ].map((award) => (
-                <div key={award} className="flex gap-2 items-start">
-                  <span className="w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0 mt-1.5" />
-                  <span className="font-mono text-xs text-gold/80">{award}</span>
-                </div>
-              ))}
-            </div>
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              <div className="w-full h-px bg-gold/10 animate-scan" />
-            </div>
-          </div>
-        </motion.div>
-
-
+        <p className="mt-8 text-sm text-[#888]">
+          Python · Statistics · Machine Learning · Prediction Markets · Documentary Film
+        </p>
       </div>
     </section>
   )
