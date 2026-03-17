@@ -9,7 +9,7 @@ export default function Research() {
       </p>
 
       <div className="divide-y divide-[#e5e7eb]">
-        {articles.map((article) => {
+        {articles.slice(0, 3).map((article) => {
           const inner = (
             <>
               <div className="flex items-baseline justify-between gap-4 mb-1">
@@ -41,6 +41,13 @@ export default function Research() {
           )
         })}
       </div>
+
+      <Link
+        href="/research"
+        className="inline-block mt-4 text-sm text-[#444] hover:underline"
+      >
+        View More &rarr;
+      </Link>
     </section>
   )
 }
