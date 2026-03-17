@@ -79,7 +79,7 @@ const leadershipExperience = [
     logo: "/logos/MCS_Logo.jpg",
     logoColor: "bg-blue-800",
     role: "Founder and President",
-    company: "UCR Media and Cultural Film Club",
+    company: "UCR Media and Cultural Studies Film Club",
     location: "Riverside, CA",
     startDate: "Mar 2024",
     endDate: "Jun 2024",
