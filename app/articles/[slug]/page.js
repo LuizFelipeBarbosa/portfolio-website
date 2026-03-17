@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { articles, getArticleBySlug, formatDate } from "@/data/articles"
+import { articles, getArticleBySlug, formatDate, getReadTime } from "@/data/articles"
 
 export function generateStaticParams() {
   return articles
@@ -76,7 +76,7 @@ export default function ArticlePage({ params }) {
       </h1>
 
       <p className="text-sm text-[#888] mb-12">
-        {article.author} &middot; {formatDate(article.date)}
+        {article.author} &middot; {formatDate(article.date)} &middot; {getReadTime(article)} min read
       </p>
 
       <div className="space-y-6 text-[#333] leading-relaxed">
@@ -107,6 +107,37 @@ export default function ArticlePage({ params }) {
             {section.paragraphsAfterImage?.map((p, j) => (
               <Paragraph key={`after-${j}`} text={p} footnotes={article.footnotes} />
             ))}
+            {section.table && (
+              <figure className="my-6 overflow-x-auto">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr>
+                      {section.table.headers.map((h, j) => (
+                        <th key={j} className="text-left py-2 px-3 border-b-2 border-[#ddd] text-[#111] font-semibold text-xs">
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.table.rows.map((row, j) => (
+                      <tr key={j} className={j % 2 === 0 ? "bg-[#f5f5f5]" : ""}>
+                        {row.map((cell, k) => (
+                          <td key={k} className="py-2 px-3 border-b border-[#e5e7eb] text-xs text-[#444]">
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                {section.table.caption && (
+                  <figcaption className="mt-2 text-xs text-[#888] italic">
+                    {section.table.caption}
+                  </figcaption>
+                )}
+              </figure>
+            )}
           </div>
         ))}
       </div>
