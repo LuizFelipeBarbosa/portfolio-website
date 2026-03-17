@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { articles, getArticleBySlug, formatDate, getReadTime } from "@/data/articles"
+import { slugify } from "@/lib/slugify"
+import TableOfContents from "@/components/TableOfContents"
 
 export function generateStaticParams() {
   return articles
@@ -62,98 +64,115 @@ export default function ArticlePage({ params }) {
   const article = getArticleBySlug(params.slug)
   if (!article) notFound()
 
+  const headings = article.sections
+    .filter((s) => s.heading)
+    .map((s) => ({ text: s.heading, id: slugify(s.heading) }))
+
   return (
-    <main className="max-w-[800px] mx-auto px-6 py-16">
-      <Link
-        href="/#research"
-        className="text-sm text-[#888] hover:underline"
-      >
-        &larr; Back
-      </Link>
+    <div className="relative max-w-[1400px] mx-auto px-6 py-16 xl:grid xl:grid-cols-[1fr_minmax(0,720px)_1fr] xl:gap-8">
+      <div className="hidden xl:block" />
 
-      <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-[#111] mt-8 mb-4">
-        {article.title}
-      </h1>
+      <main className="max-w-[720px] mx-auto xl:max-w-none">
+        <Link
+          href="/#research"
+          className="text-sm text-[#888] hover:underline"
+        >
+          &larr; Back
+        </Link>
 
-      <p className="text-sm text-[#888] mb-12">
-        {article.author} &middot; {formatDate(article.date)} &middot; {getReadTime(article)} min read
-      </p>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-[#111] mt-8 mb-4">
+          {article.title}
+        </h1>
 
-      <div className="space-y-6 text-[#333] leading-relaxed">
-        {article.sections.map((section, i) => (
-          <div key={i}>
-            {section.heading && (
-              <h2 className="text-xl font-semibold text-[#111] mt-10 mb-4">
-                {section.heading}
-              </h2>
-            )}
-            {section.paragraphs.map((p, j) => (
-              <Paragraph key={j} text={p} footnotes={article.footnotes} />
-            ))}
-            {section.image && (
-              <figure className="my-6">
-                <img
-                  src={section.image}
-                  alt={section.imageCaption || ""}
-                  className="w-full rounded"
-                />
-                {section.imageCaption && (
-                  <figcaption className="mt-2 text-xs text-[#888] italic">
-                    {section.imageCaption}
-                  </figcaption>
-                )}
-              </figure>
-            )}
-            {section.paragraphsAfterImage?.map((p, j) => (
-              <Paragraph key={`after-${j}`} text={p} footnotes={article.footnotes} />
-            ))}
-            {section.table && (
-              <figure className="my-6 overflow-x-auto">
-                <table className="w-full text-sm border-collapse">
-                  <thead>
-                    <tr>
-                      {section.table.headers.map((h, j) => (
-                        <th key={j} className="text-left py-2 px-3 border-b-2 border-[#ddd] text-[#111] font-semibold text-xs">
-                          {h}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {section.table.rows.map((row, j) => (
-                      <tr key={j} className={j % 2 === 0 ? "bg-[#f5f5f5]" : ""}>
-                        {row.map((cell, k) => (
-                          <td key={k} className="py-2 px-3 border-b border-[#e5e7eb] text-xs text-[#444]">
-                            {cell}
-                          </td>
+        <p className="text-sm text-[#888] mb-12">
+          {article.author} &middot; {formatDate(article.date)} &middot; {getReadTime(article)} min read
+        </p>
+
+        <div className="space-y-6 text-[#333] leading-relaxed">
+          {article.sections.map((section, i) => (
+            <div key={i}>
+              {section.heading && (
+                <h2
+                  id={slugify(section.heading)}
+                  className="text-xl font-semibold text-[#111] mt-10 mb-4 scroll-mt-24"
+                >
+                  {section.heading}
+                </h2>
+              )}
+              {section.paragraphs.map((p, j) => (
+                <Paragraph key={j} text={p} footnotes={article.footnotes} />
+              ))}
+              {section.image && (
+                <figure className="my-6">
+                  <img
+                    src={section.image}
+                    alt={section.imageCaption || ""}
+                    className="w-full rounded"
+                  />
+                  {section.imageCaption && (
+                    <figcaption className="mt-2 text-xs text-[#888] italic">
+                      {section.imageCaption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
+              {section.paragraphsAfterImage?.map((p, j) => (
+                <Paragraph key={`after-${j}`} text={p} footnotes={article.footnotes} />
+              ))}
+              {section.table && (
+                <figure className="my-6 overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr>
+                        {section.table.headers.map((h, j) => (
+                          <th key={j} className="text-left py-2 px-3 border-b-2 border-[#ddd] text-[#111] font-semibold text-xs">
+                            {h}
+                          </th>
                         ))}
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-                {section.table.caption && (
-                  <figcaption className="mt-2 text-xs text-[#888] italic">
-                    {section.table.caption}
-                  </figcaption>
-                )}
-              </figure>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {article.citations && (
-        <div className="mt-10 pt-8 border-t border-[#e5e7eb]">
-          <h3 className="text-sm font-semibold text-[#111] mb-4">
-            Works Cited
-          </h3>
-          <ul className="space-y-2 text-sm text-[#555]">
-            {article.citations.map((cite, i) => (
-              <li key={i}>{renderCitation(cite)}</li>
-            ))}
-          </ul>
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row, j) => (
+                        <tr key={j} className={j % 2 === 0 ? "bg-[#f5f5f5]" : ""}>
+                          {row.map((cell, k) => (
+                            <td key={k} className="py-2 px-3 border-b border-[#e5e7eb] text-xs text-[#444]">
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  {section.table.caption && (
+                    <figcaption className="mt-2 text-xs text-[#888] italic">
+                      {section.table.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
+            </div>
+          ))}
         </div>
-      )}
-    </main>
+
+        {article.citations && (
+          <div className="mt-10 pt-8 border-t border-[#e5e7eb]">
+            <h3 className="text-sm font-semibold text-[#111] mb-4">
+              Works Cited
+            </h3>
+            <ul className="space-y-2 text-sm text-[#555]">
+              {article.citations.map((cite, i) => (
+                <li key={i}>{renderCitation(cite)}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </main>
+
+      <aside className="hidden xl:block">
+        <div className="sticky top-24">
+          <TableOfContents headings={headings} />
+        </div>
+      </aside>
+    </div>
   )
 }
