@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react'
 
 const navLinks = [
-  { label: 'About', href: '#about' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Research', href: '#research' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -19,11 +20,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 bg-white transition-shadow duration-200 ${
-        scrolled ? 'shadow-sm' : ''
-      } border-b border-[#e5e7eb]`}
+      className={`sticky top-0 z-50 bg-[#fafafa]/80 backdrop-blur-sm transition-shadow duration-200 ${scrolled ? 'shadow-sm' : ''
+        } border-b border-[#e5e7eb]`}
     >
-      <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-[800px] mx-auto py-4 flex items-center justify-between">
         <a href="#hero" className="font-semibold text-[#111] tracking-tight">
           LFB
         </a>

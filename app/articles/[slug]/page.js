@@ -1,0 +1,128 @@
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { articles, getArticleBySlug, formatDate } from "@/data/articles"
+
+export function generateStaticParams() {
+  return articles
+    .filter((a) => a.slug)
+    .map((a) => ({ slug: a.slug }))
+}
+
+export function generateMetadata({ params }) {
+  const article = getArticleBySlug(params.slug)
+  if (!article) return {}
+  return {
+    title: `${article.title} — Luiz Felipe Barbosa`,
+    description: article.summary,
+  }
+}
+
+function renderText(text, footnotes) {
+  if (!text.includes("{{")) return text
+  const parts = text.split(/(\{\{\d+\}\})/)
+  return parts.map((part, i) => {
+    const match = part.match(/^\{\{(\d+)\}\}$/)
+    if (match) {
+      const num = parseInt(match[1])
+      const note = footnotes?.[num - 1]
+      return (
+        <sup key={i} className="text-[10px] text-[#888] ml-[1px]" title={note}>
+          {num}
+        </sup>
+      )
+    }
+    return part
+  })
+}
+
+function renderCitation(text) {
+  const parts = text.split(/(https?:\/\/\S+|(?:[a-z]+\.)+[a-z]+\/\S+)/)
+  return parts.map((part, i) => {
+    const isUrl = /^https?:\/\//.test(part) || /^(?:[a-z]+\.)+[a-z]+\//.test(part)
+    if (!isUrl) return part
+    const clean = part.replace(/[.,;]+$/, "")
+    const trailing = part.slice(clean.length)
+    const href = clean.startsWith("http") ? clean : `http://${clean}`
+    return (
+      <span key={i}>
+        <a href={href} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+          {clean}
+        </a>
+        {trailing}
+      </span>
+    )
+  })
+}
+
+function Paragraph({ text, footnotes }) {
+  return <p className="mb-4">{renderText(text, footnotes)}</p>
+}
+
+export default function ArticlePage({ params }) {
+  const article = getArticleBySlug(params.slug)
+  if (!article) notFound()
+
+  return (
+    <main className="max-w-[800px] mx-auto px-6 py-16">
+      <Link
+        href="/#research"
+        className="text-sm text-[#888] hover:underline"
+      >
+        &larr; Back
+      </Link>
+
+      <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-[#111] mt-8 mb-4">
+        {article.title}
+      </h1>
+
+      <p className="text-sm text-[#888] mb-12">
+        {article.author} &middot; {formatDate(article.date)}
+      </p>
+
+      <div className="space-y-6 text-[#333] leading-relaxed">
+        {article.sections.map((section, i) => (
+          <div key={i}>
+            {section.heading && (
+              <h2 className="text-xl font-semibold text-[#111] mt-10 mb-4">
+                {section.heading}
+              </h2>
+            )}
+            {section.paragraphs.map((p, j) => (
+              <Paragraph key={j} text={p} footnotes={article.footnotes} />
+            ))}
+            {section.image && (
+              <figure className="my-6">
+                <img
+                  src={section.image}
+                  alt={section.imageCaption || ""}
+                  className="w-full rounded"
+                />
+                {section.imageCaption && (
+                  <figcaption className="mt-2 text-xs text-[#888] italic">
+                    {section.imageCaption}
+                  </figcaption>
+                )}
+              </figure>
+            )}
+            {section.paragraphsAfterImage?.map((p, j) => (
+              <Paragraph key={`after-${j}`} text={p} footnotes={article.footnotes} />
+            ))}
+          </div>
+        ))}
+      </div>
+
+      {article.citations && (
+        <div className="mt-10 pt-8 border-t border-[#e5e7eb]">
+          <h3 className="text-sm font-semibold text-[#111] mb-4">
+            Works Cited
+          </h3>
+          <ul className="space-y-2 text-sm text-[#555]">
+            {article.citations.map((cite, i) => (
+              <li key={i}>{renderCitation(cite)}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </main>
+  )
+}

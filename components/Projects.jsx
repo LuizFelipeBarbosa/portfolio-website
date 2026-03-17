@@ -1,43 +1,11 @@
-const featured = [
-  {
-    title: "Adorno NLP Research",
-    year: "2025",
-    description:
-      "NLP pipeline on 84k YouTube comments operationalizing Adorno critique categories with transformer-based classification.",
-    tags: "Python, NLP, Transformers, Text Classification, Media Theory",
-  },
-  {
-    title: "Longshot Bias in Prediction Markets",
-    year: "2025",
-    description:
-      "Analysis of 18k Kalshi contracts testing for exploitable mispricing in long-shot political speech mention markets.",
-    tags: "Python, pandas, statsmodels, VWAP, Behavioral Economics",
-  },
-  {
-    title: "GeographyGo.fun",
-    year: "2024",
-    description:
-      "Interactive geography game suite with 5 modes — React + D3 + Three.js + Supabase.",
-    tags: "React, TypeScript, D3-geo, Three.js, Supabase",
-    link: { label: "Live", href: "https://geographygo.fun" },
-  },
+const projects = [
   {
     title: "Kalshi Trading Bot",
     year: "2025",
     description:
-      "Algorithmic trading system for prediction markets; 52.8% win rate, 2.36× profit factor, 28,903 backtested trades.",
+      "Algorithmic trading system for prediction markets; 52.8% win rate, 2.36\u00d7 profit factor, 28,903 backtested trades.",
     tags: "Python, asyncio, Backtesting, Statistics, Time Series",
   },
-  {
-    title: "Ghosts of Adelanto",
-    year: "2024",
-    description:
-      "Documentary; organized Congressional lobbying with 50+ students and Rep. Mark Takano.",
-    tags: "Documentary, Policy, Advocacy, Congressional Lobbying",
-  },
-]
-
-const other = [
   {
     title: "BRASA Berkeley Website",
     year: "2025",
@@ -45,6 +13,14 @@ const other = [
       "Student org website for the Brazilian Student Association, Next.js 14.",
     tags: "React, Next.js, JavaScript",
     link: { label: "Live", href: "https://brasa.studentorg.berkeley.edu/" },
+  },
+  {
+    title: "GeographyGo.fun",
+    year: "2024",
+    description:
+      "Interactive geography game suite with 5 modes \u2014 React + D3 + Three.js + Supabase.",
+    tags: "React, TypeScript, D3-geo, Three.js, Supabase",
+    link: { label: "Live", href: "https://geographygo.fun" },
   },
 ]
 
@@ -75,26 +51,25 @@ function ProjectRow({ project }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 md:py-28">
-      <div className="max-w-3xl mx-auto px-6">
-        <p className="text-xs uppercase tracking-widest text-[#999] mb-6">
-          Projects
-        </p>
+    <section id="projects" className="mt-16">
+      <p className="text-xs uppercase tracking-widest text-[#999] mb-6">
+        Current Projects
+      </p>
 
-        <div className="divide-y divide-[#e5e7eb]">
-          {featured.map((project) => (
-            <ProjectRow key={project.title} project={project} />
-          ))}
-        </div>
-
-        <hr className="my-8 border-[#e5e7eb]" />
-
-        <div className="divide-y divide-[#e5e7eb]">
-          {other.map((project) => (
-            <ProjectRow key={project.title} project={project} />
-          ))}
-        </div>
+      <div className="divide-y divide-[#e5e7eb]">
+        {projects.slice(0, 3).map((project) => (
+          <ProjectRow key={project.title} project={project} />
+        ))}
       </div>
+
+      <a
+        href="https://github.com/LuizFelipeBarbosa"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-4 text-sm text-[#444] hover:underline"
+      >
+        View More &rarr;
+      </a>
     </section>
   )
 }
