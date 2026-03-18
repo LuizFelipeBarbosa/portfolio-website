@@ -7,6 +7,9 @@ import machineTranslation from "./analysis-of-machine-translation-algorithms"
 import memorandum from "./memorandum-to-interest-groups"
 import constitution from "./the-us-constitution-and-democracy"
 import immigration from "./immigration-and-the-business-of-second-class-citizenship"
+import federalist from "./federalist-no-70-and-immigration-reform"
+import policing from "./the-george-floyd-justice-in-policing-act"
+import fightclub from "./insomnia-through-the-lens-of-fight-club"
 
 export const articles = [
   mamdani,
@@ -18,6 +21,9 @@ export const articles = [
   machineTranslation,
   constitution,
   immigration,
+  federalist,
+  policing,
+  fightclub,
 ].sort((a, b) => b.date.localeCompare(a.date))
 
 export function getArticleBySlug(slug) {
