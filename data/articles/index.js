@@ -6,6 +6,7 @@ import borges from "./time-choice-and-destiny"
 import machineTranslation from "./analysis-of-machine-translation-algorithms"
 import memorandum from "./memorandum-to-interest-groups"
 import constitution from "./the-us-constitution-and-democracy"
+import immigration from "./immigration-and-the-business-of-second-class-citizenship"
 
 export const articles = [
   mamdani,
@@ -16,6 +17,7 @@ export const articles = [
   borges,
   machineTranslation,
   constitution,
+  immigration,
 ].sort((a, b) => b.date.localeCompare(a.date))
 
 export function getArticleBySlug(slug) {
