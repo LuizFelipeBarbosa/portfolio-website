@@ -28,7 +28,7 @@ export default function Navbar() {
         <a href="#hero" className="font-semibold text-[#111] tracking-tight">
           LFB
         </a>
-        
+
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
