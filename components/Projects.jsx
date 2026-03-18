@@ -7,16 +7,17 @@ export function ProjectRow({ project }) {
       <div className="flex items-baseline justify-between gap-4 mb-1">
         <h3 className="font-semibold text-[#111] group-hover:text-accent transition-colors">
           {project.title}
-          {project.link && (
+          {(project.links || (project.link ? [project.link] : [])).map((l, i) => (
             <a
-              href={project.link.href}
+              key={i}
+              href={l.href}
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 text-sm font-normal text-accent hover:underline"
             >
-              [{project.link.label} &nearr;]
+              [{l.label} ↗]
             </a>
-          )}
+          ))}
         </h3>
         <span className="text-sm text-[#999] shrink-0">{project.year}</span>
       </div>

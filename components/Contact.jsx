@@ -37,7 +37,7 @@ export default function Contact() {
       </div>
 
       <div className="border-t border-[#e5e7eb] pt-6 text-xs text-[#999]">
-        &copy; 2025 Luiz Felipe Barbosa
+        &copy; {new Date().getFullYear()} Luiz Felipe Barbosa
       </div>
     </section>
   )

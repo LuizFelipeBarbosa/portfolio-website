@@ -1,25 +1,35 @@
 export const projects = [
   {
-    title: "Kalshi Trading Bot",
-    year: "2025",
+    title: "Photobooth",
+    year: "2026",
     description:
-      "Algorithmic trading system for prediction markets; 52.8% win rate, 2.36\u00d7 profit factor, 28,903 backtested trades.",
-    tags: "Python, asyncio, Backtesting, Statistics, Time Series",
+      "Web-based photobooth for parties and events with single photo and photo strip modes, a gallery with likes and reprints, and thermal printing via a RONGTA USB printer. Runs on a Raspberry Pi with a USB webcam.",
+    tags: "React, Flask, Python, OpenCV, Tailwind CSS, Vite",
+    links: [
+      { label: "Instagram", href: "https://www.instagram.com/receiptroom_" },
+      { label: "GitHub", href: "https://github.com/LuizFelipeBarbosa/photobooth" },
+    ],
   },
   {
     title: "BRASA Berkeley Website",
     year: "2025",
     description:
-      "Student org website for the Brazilian Student Association, Next.js 14.",
-    tags: "React, Next.js, JavaScript",
-    link: { label: "Live", href: "https://brasa.studentorg.berkeley.edu/" },
+      "Public website for BRASA Berkeley, the Brazilian Student Association at UC Berkeley. Features bilingual English/Portuguese content, event listings, member profiles, and partner pages. Statically exported and deployed on Netlify.",
+    tags: "React, Next.js, Tailwind CSS, Framer Motion, EmailJS",
+    links: [
+      { label: "Live", href: "https://brasa.studentorg.berkeley.edu/" },
+      { label: "GitHub", href: "https://github.com/LuizFelipeBarbosa/websitebrasa" },
+    ],
   },
   {
     title: "GeographyGo.fun",
     year: "2024",
     description:
-      "Interactive geography game suite with 5 modes \u2014 React + D3 + Three.js + Supabase.",
-    tags: "React, TypeScript, D3-geo, Three.js, Supabase",
-    link: { label: "Live", href: "https://geographygo.fun" },
+      "A collection of interactive geography games\u2014Flagle, Worldle, Travle, World Quiz, and continent-specific challenges\u2014with map rendering via D3-geo and animated UI powered by Framer Motion.",
+    tags: "React, TypeScript, D3-geo, Tailwind CSS, Framer Motion, Radix UI",
+    links: [
+      { label: "Live", href: "https://geographygo.fun" },
+      { label: "GitHub", href: "https://github.com/LuizFelipeBarbosa/countries-world-game" },
+    ],
   },
 ]
