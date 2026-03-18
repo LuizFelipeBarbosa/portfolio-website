@@ -30,7 +30,7 @@ export function ProjectRow({ project }) {
 export default function Projects() {
   return (
     <section id="projects" className="mt-16">
-      <p className="text-xs uppercase tracking-widest text-[#999] mb-6">
+      <p className="text-xs uppercase tracking-widest text-[#999] mb-3">
         Current Projects
       </p>
 

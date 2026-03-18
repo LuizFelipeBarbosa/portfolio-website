@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section id="about" className="py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-6">
-        <p className="text-xs uppercase tracking-widest text-[#999] mb-6">
+        <p className="text-xs uppercase tracking-widest text-[#999] mb-3">
           About
         </p>
 
@@ -24,7 +24,7 @@ export default function About() {
           <p>
             Outside of coursework, I&apos;m also a filmmaker and policy advocate. I
             served as associate producer on the documentary <em>Ghosts of
-            Adelanto</em>, investigating immigration detention, and organized a
+              Adelanto</em>, investigating immigration detention, and organized a
             Congressional lobbying event with 50+ students and Congressman Mark
             Takano.
           </p>

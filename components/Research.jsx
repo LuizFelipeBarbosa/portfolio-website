@@ -4,7 +4,7 @@ import { articles, formatDate } from "@/data/articles"
 export default function Research() {
   return (
     <section id="research" className="mt-16">
-      <p className="text-xs uppercase tracking-widest text-[#999] mb-6">
+      <p className="text-xs uppercase tracking-widest text-[#999] mb-3">
         Research &amp; Writing
       </p>
 

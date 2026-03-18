@@ -1,13 +1,13 @@
 export default function Contact() {
   return (
     <section id="contact" className="mt-16 pb-16">
-      <p className="text-xs uppercase tracking-widest text-[#999] mb-6">
+      <p className="text-xs uppercase tracking-widest text-[#999] mb-3">
         Contact
       </p>
 
       <h2 className="text-2xl font-bold text-[#111] mb-4">Get in touch</h2>
 
-      <p className="text-[#444] mb-6">
+      <p className="text-[#444] mb-3">
         I am open to quant research internships and trading roles for Summer 2026.
       </p>
 

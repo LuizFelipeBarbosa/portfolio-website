@@ -131,14 +131,14 @@ export default function Experience() {
   return (
     <section id="experience" className="mt-16 flex flex-col gap-12">
       <div>
-        <p className="text-xs uppercase tracking-widest text-[#999] mb-6">
+        <p className="text-xs uppercase tracking-widest text-[#999] mb-3">
           Professional Experience
         </p>
         <ExperienceList items={professionalExperience} />
       </div>
 
       <div>
-        <p className="text-xs uppercase tracking-widest text-[#999] mb-6">
+        <p className="text-xs uppercase tracking-widest text-[#999] mb-3">
           Leadership Experience
         </p>
         <ExperienceList items={leadershipExperience} />
