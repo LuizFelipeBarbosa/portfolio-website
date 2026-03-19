@@ -56,30 +56,43 @@ const article = {
       heading: "Testing Four Agentic Tools Against a Real Brief",
       paragraphs: [
         "We ran the same product brief through four agentic AI tools \u2014 FigmaMake, Lovable.ai, Google AntiGravity, and MagicPath.ai \u2014 using a geography quiz platform as the test case. The brief described a product with multiple game modes, continent-specific quizzes, and a need to communicate difficulty and variety to first-time visitors.",
-        "The outputs ranged considerably. At the simpler end, the AI tools produced functional but flat designs: correct structure, appropriate color differentiation, no real visual hierarchy. These were layouts, not interfaces.",
+        "FigmaMake \u2014 Figma\u2019s own AI feature, built directly into the product \u2014 was the most telling test. It produced a structurally correct but visually underdeveloped result: appropriate layout, color-coded sections, and navigable hierarchy, but no craft. It read like a wireframe that someone had filled in with flat colors. As a design tool, it stayed in the design layer \u2014 it generated an artifact you\u2019d bring into a team review, not one you\u2019d ship.",
       ],
       image: "/articles/can-ai-replace-designers/slide23-img1.png",
       imageCaption:
-        "One of the simpler AI-generated outputs: a functional but visually underdeveloped homepage with solid color blocks and no hierarchy. Correct structure; no craft.",
+        "FigmaMake output: structurally correct, appropriately colored, but flat \u2014 more wireframe than finished product. Figma\u2019s own AI stays in the design layer.",
       paragraphsAfterImage: [
-        "At the more capable end, the best outputs were genuinely impressive: polished dashboards with information hierarchies, gamification elements (badges, streaks, difficulty tags), continent-specific quiz cards, and well-organized onboarding flows. The strongest output \u2014 shown below \u2014 was a reasonable starting point for a real product, not a throwaway wireframe.",
+        "The agentic coding tools produced a different category of output. Lovable.ai, Google AntiGravity, and MagicPath.ai all generated working code, not design artifacts. Their outputs were deployable websites, not Figma prototypes. Lovable.ai in particular produced a noticeably more polished result \u2014 a structured landing page with feature cards, game mode descriptions, and a clear information hierarchy.",
+      ],
+    },
+    {
+      paragraphs: [],
+      image: "/articles/can-ai-replace-designers/slide23-img2.png",
+      imageCaption:
+        "Lovable.ai output: a deployable landing page with proper feature descriptions, visual hierarchy, and game mode cards \u2014 generated from the same brief as the FigmaMake output above.",
+      paragraphsAfterImage: [
+        "The best output we saw across all four tools was a full-featured application dashboard with 9 distinct game modes, difficulty tags, streak tracking, gamification elements, and a structured engagement loop. It was a reasonable starting point for a real product.",
       ],
     },
     {
       paragraphs: [],
       image: "/articles/can-ai-replace-designers/slide26-img1.png",
       imageCaption:
-        "The most advanced AI-generated output: a full-featured dashboard with 9 game modes, gamification elements, streak tracking, and a structured engagement loop \u2014 all generated from the same text brief.",
+        "The most capable output across all tools tested: a full dashboard with game modes, gamification, streak tracking, and a leaderboard \u2014 all from a single text brief.",
       paragraphsAfterImage: [
-        "But the right word for both outputs is \u201cstarting point.\u201d Every result we tested required significant human judgment before it would be ready to ship. None of the tools understood the user research context behind the brief. Visual consistency broke down across pages as components were reused inconsistently. Complex, stateful interactions were handled poorly by every tool. And none could make the judgment calls that a designer makes constantly: when to use which component, when to break from the pattern, when the technically correct answer is the wrong answer for this particular user.",
-        "The compression is real. A week of rough Figma work can be approximated in an hour with a capable agentic tool. But the delta between \u201capproximated\u201d and \u201cshippable\u201d is where design value still lives.",
+        "The right word for all of these outputs is still \u201cstarting point.\u201d Every result required significant human judgment to take from generated to shippable. None of the tools understood the user research context behind the brief. Visual consistency broke down across pages. Complex stateful interactions \u2014 multi-step flows, error states, edge cases \u2014 were handled poorly across the board. No tool could make the judgment calls a designer makes constantly: when to break from the pattern, when the technically correct layout is the wrong one for this user.",
+        "What the gap between FigmaMake and Lovable illustrates is also strategically important: FigmaMake generates design artifacts that live in Figma\u2019s collaboration layer. Lovable generates production code that bypasses it. The better the coding tools get, the less reason there is to route product creation through a design tool at all \u2014 which loops directly back to the seat compression argument.",
       ],
     },
     {
       heading: "What Reddit Actually Thinks",
       paragraphs: [
-        "We analyzed 1,766 Reddit posts and comments from r/FigmaDesign and r/UI_Design \u2014 829 posts and 937 comments \u2014 covering July 2025 through January 2026.{{5}} We ran two complementary sentiment analyses: TextBlob,{{6}} which measures polarity on a \u22121 to 1 scale, and VADER (Valence Aware Dictionary and sEntiment Reasoner),{{7}} which is better calibrated for informal internet text.",
-        "VADER found an average compound polarity of 0.422 \u2014 moderately positive. TextBlob put average polarity at 0.131 \u2014 mildly positive. Both tools agree: the design community\u2019s baseline attitude toward Figma is positive, not panicked.",
+        "We scraped 1,766 posts and comments from r/FigmaDesign and r/UI_Design using PRAW (the Python Reddit API Wrapper), collecting the top posts by engagement and their top-level comment threads over a six-month window from July 2025 through January 2026.{{5}} The dataset comprised 829 original posts and 937 comments. For each entry, we combined the post title and body text and ran it through two independent NLP sentiment analyzers.",
+        "We used TextBlob{{6}} and VADER (Valence Aware Dictionary and sEntiment Reasoner){{7}} in tandem \u2014 not because either is sufficient alone, but because they fail differently. TextBlob assigns sentiment by averaging the polarity scores of individual words from a general-purpose lexicon. It works reasonably well for formal text but treats a lot of internet language as neutral because the vocabulary isn\u2019t in its training dictionary. VADER was specifically tuned for social media: it handles capitalization for emphasis, punctuation patterns (\u201c!!!\u201d vs \u201c.\u201d), colloquialisms, and negation sequences that trip up generic analyzers. Comparing both gives a more complete picture.",
+        "The divergence in results is itself informative. VADER classified 69.0% of entries as positive, 17.5% neutral, and 13.5% negative. TextBlob classified 51.2% positive, 40.8% neutral, and just 8.0% negative. The gap sits almost entirely in the neutral bucket: VADER recognizes enthusiasm and frustration in informal text that TextBlob reads as bland. For a community like r/FigmaDesign \u2014 where people write things like \u201chomg this fixed my life\u201d and \u201cWHY AM I UNABLE TO TEST FIGMA MAKE\u201d \u2014 VADER is the more accurate instrument.",
+        "One pattern worth noting: Reddit posts were consistently more positive than comments across both tools. VADER put posts at 80.1% positive vs. 59.2% for comments. That tracks with how Reddit works \u2014 people post to share something they\u2019re excited about, and the comments are where frustration and critique surfaces. If you only measured posts, you\u2019d overestimate community satisfaction. If you only measured comments, you\u2019d underestimate it.",
+        "We also classified each entry into one of 16 discussion themes using regex pattern matching \u2014 things like \u201cPricing,\u201d \u201cFigma Make,\u201d \u201cDev Mode,\u201d \u201cCollaboration\u201d \u2014 and computed average polarity per theme for entries with at least 20 instances. That threshold filtered out low-signal topics and kept the comparisons statistically meaningful.",
+        "VADER found an average compound polarity of 0.422 \u2014 moderately positive overall. TextBlob found 0.131 \u2014 mildly positive. The design community isn\u2019t alarmed. It\u2019s frustrated in specific places.",
       ],
       image: "/articles/can-ai-replace-designers/slide18-img1.png",
       imageCaption:
