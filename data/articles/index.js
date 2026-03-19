@@ -12,8 +12,10 @@ import policing from "./the-george-floyd-justice-in-policing-act"
 import fightclub from "./insomnia-through-the-lens-of-fight-club"
 import stablecoin from "./stablecoin-infrastructure-landscape"
 import figmaAI from "./can-ai-replace-designers"
+import longshot from "./longshot-bias-prediction-markets"
 
 export const articles = [
+  longshot,
   figmaAI,
   mamdani,
   burgerKing,
