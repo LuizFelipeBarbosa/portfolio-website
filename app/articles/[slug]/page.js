@@ -165,17 +165,21 @@ export default function ArticlePage({ params }) {
         </div>
       )}
 
-      {article.furtherReadings?.length > 0 && (() => {
-        const related = article.furtherReadings
+      {(() => {
+        const explicit = (article.furtherReadings || [])
           .map((slug) => getArticleBySlug(slug))
           .filter(Boolean)
-        if (!related.length) return null
+        const others = articles.filter(
+          (a) => a.slug && a.slug !== article.slug && !explicit.includes(a)
+        )
+        const more = [...explicit, ...others].slice(0, 3)
+        if (!more.length) return null
         return (
           <div className="mt-8 pt-8 border-t border-[#e5e7eb]">
             <h3 className="text-sm font-semibold text-[#111] mb-4">
               More Articles
             </h3>
-            <ArticleList articles={related} />
+            <ArticleList articles={more} />
           </div>
         )
       })()}
