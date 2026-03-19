@@ -26,7 +26,7 @@ const article = {
     {
       heading: "The Foreign Exchange and Cryptocurrency Markets",
       paragraphs: [
-        "The foreign exchange market processes roughly $7.5 trillion in daily turnover{{4}} \u2014 more than any other financial market in the world. It operates with no central exchange, with trades negotiated over-the-counter between banks, institutional dealers, and electronic platforms across the overlapping time zones of London, New York, Tokyo, and Singapore. This decentralized structure functions well for large institutions trading major currency pairs. It functions poorly for smaller transactions, non-major corridors, and businesses in developing economies that must convert local-currency revenue into dollars without absorbing fees of five to eight percent and waiting two to four days for settlement.{{5}}",
+        "The foreign exchange market processes roughly $7.5+ trillion in daily turnover{{4}} \u2014 more than any other financial market in the world. It operates with no central exchange, with trades negotiated over-the-counter between banks, institutional dealers, and electronic platforms across the overlapping time zones of London, New York, Tokyo, and Singapore. This decentralized structure functions well for large institutions trading major currency pairs. It functions poorly for smaller transactions, non-major corridors, and businesses in developing economies that must convert local-currency revenue into dollars without absorbing fees of five to eight percent and waiting two to four days for settlement.{{5}}",
         "Cryptocurrency presents a structural alternative. Bitcoin, Ethereum, and their peers operate on decentralized blockchains \u2014 networks where transactions settle on shared, immutable ledgers without central bank oversight, enabling peer-to-peer value transfer without any participant trusting a single intermediary. The tradeoffs are substantial: exchange insolvency, smart contract vulnerabilities, chain congestion, and regulatory uncertainty introduce risks without clear equivalents in traditional banking. More fundamentally, the price volatility of most crypto assets makes them impractical as payment instruments for businesses that denominate goods and services in dollars.",
         "Stablecoins occupy a distinct position in this landscape. They hold their value in dollars while clearing and settling on a blockchain, which means that a payment from New York to Manila can finalize in seconds for a fraction of a percent, rather than moving through a correspondent banking chain that extracts a toll at every step. The relevant comparison is not FX trading mechanics against crypto trading mechanics but rather correspondent banking against stablecoin settlement as competing architectures for moving value across borders. The former requires bilateral account relationships at every link of the chain; the latter collapses the chain entirely, executing the foreign exchange conversion once, at delivery.",
       ],
@@ -103,6 +103,10 @@ const article = {
     "Multiple industry reports, Q4 2024. Visa FY2024 payment volume: ~$14.8T. Stablecoin volume per The Block Research and Artemis.",
     "\"Stripe ends Bitcoin support,\" TechCrunch, January 23, 2018.",
     "GENIUS Act (Guiding and Establishing National Innovation for U.S. Stablecoins Act), S.394, 119th Congress, signed 2025.",
+  ],
+  furtherReadings: [
+    "middle-out-and-bottom-up-the-economic-policy-of-joe-biden",
+    "can-ai-replace-designers",
   ],
   citations: [
     "\"Stripe Acquires Bridge for $1.1 Billion in Largest-Ever Crypto Acquisition.\" The Verge, October 20, 2024. theverge.com/2024/10/20/stripe-bridge-acquisition",

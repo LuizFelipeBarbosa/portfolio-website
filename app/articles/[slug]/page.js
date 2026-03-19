@@ -156,10 +156,31 @@ export default function ArticlePage({ params }) {
           <h3 className="text-sm font-semibold text-[#111] mb-4">
             Works Cited
           </h3>
-          <ul className="space-y-2 text-sm text-[#555]">
+          <ol className="space-y-2 text-sm text-[#555] list-decimal list-inside">
             {article.citations.map((cite, i) => (
               <li key={i}>{renderCitation(cite)}</li>
             ))}
+          </ol>
+        </div>
+      )}
+
+      {article.furtherReadings?.length > 0 && (
+        <div className="mt-8 pt-8 border-t border-[#e5e7eb]">
+          <h3 className="text-sm font-semibold text-[#111] mb-4">
+            Further Readings
+          </h3>
+          <ul className="space-y-2 text-sm text-[#555]">
+            {article.furtherReadings.map((slug) => {
+              const related = getArticleBySlug(slug)
+              if (!related) return null
+              return (
+                <li key={slug}>
+                  <Link href={`/articles/${slug}`} className="text-accent hover:underline">
+                    {related.title}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </div>
       )}
