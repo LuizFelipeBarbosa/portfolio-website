@@ -85,7 +85,7 @@ export default function ArticlePage({ params }) {
         {article.author} &middot; {formatDate(article.date)} &middot; {getReadTime(article)} min read
       </p>
 
-      <div className="space-y-6 text-[#333] leading-relaxed">
+      <div className="space-y-6 text-[#333] leading-relaxed text-[16px]">
         {article.sections.map((section, i) => (
           <div key={i}>
             {section.heading && (

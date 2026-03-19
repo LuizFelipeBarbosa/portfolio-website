@@ -10,6 +10,7 @@ import immigration from "./immigration-and-the-business-of-second-class-citizens
 import federalist from "./federalist-no-70-and-immigration-reform"
 import policing from "./the-george-floyd-justice-in-policing-act"
 import fightclub from "./insomnia-through-the-lens-of-fight-club"
+import stablecoin from "./stablecoin-infrastructure-landscape"
 
 export const articles = [
   mamdani,
@@ -24,6 +25,7 @@ export const articles = [
   federalist,
   policing,
   fightclub,
+  stablecoin,
 ].sort((a, b) => b.date.localeCompare(a.date))
 
 export function getArticleBySlug(slug) {
