@@ -26,7 +26,7 @@ export default function Navbar() {
     >
       <div className="relative z-50 max-w-[800px] mx-auto px-4 md:px-0 py-4 flex items-center justify-between">
         <a href="#hero" className="font-semibold text-[#111] tracking-tight">
-          LFB
+          lfpmb
         </a>
 
         {/* Desktop menu */}
@@ -56,19 +56,17 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu backdrop */}
-      <div 
-        className={`md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${
-          mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
+      <div
+        className={`md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
         onClick={() => setMobileMenuOpen(false)}
         aria-hidden="true"
       />
 
       {/* Mobile menu sidebar */}
-      <div 
-        className={`md:hidden fixed top-0 right-0 h-screen w-64 bg-[#fafafa] shadow-2xl border-l border-[#e5e7eb] transform transition-transform duration-300 ease-in-out flex flex-col pt-24 ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+      <div
+        className={`md:hidden fixed top-0 right-0 h-screen w-64 bg-[#fafafa] shadow-2xl border-l border-[#e5e7eb] transform transition-transform duration-300 ease-in-out flex flex-col pt-24 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="px-6 space-y-6 flex flex-col">
           {navLinks.map((link) => (

@@ -8,7 +8,7 @@ const article = {
   sections: [
     {
       paragraphs: [
-        "When Stripe paid $1.1 billion for Bridge in October 2024,{{1}} it was the largest acquisition in crypto history. But calling it a \u201ccrypto acquisition\u201d mostly misses the point. Stripe was not buying a blockchain company. It was buying the most mature infrastructure available for solving a problem that has made international payments expensive and slow for decades.",
+        "When Stripe paid $1.1 billion for Bridge in October 2024,{{1}} it was one of the largest acquisitions in crypto history. But calling it a \u201ccrypto acquisition\u201d mostly misses the point. Stripe was not buying a blockchain company. It was buying the most mature infrastructure available for solving a problem that has made international payments expensive and slow for decades.",
         "Stripe CEO Patrick Collison put it plainly: stablecoins are \u201croom-temperature superconductors for financial services.\u201d{{2}} The metaphor is precise. A superconductor transmits electricity without resistance \u2014 the friction isn\u2019t inherent to electricity, it\u2019s a property of the material. Cross-border payments fail not because moving money internationally is hard in any physical sense, but because the plumbing built to do it was designed in the 1970s and has barely changed. Stablecoins, in Collison\u2019s framing, could remove the resistance without replacing the underlying voltage.",
         "This essay examines the infrastructure behind that claim \u2014 the FX and crypto markets that stablecoins straddle, the competitive landscape of platforms building on top of them, and what the Bridge acquisition signals for the future of cross-border commerce.",
       ],
