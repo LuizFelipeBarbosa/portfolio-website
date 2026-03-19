@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { articles, getArticleBySlug, formatDate, getReadTime } from "@/data/articles"
 import { slugify } from "@/lib/slugify"
 import TableOfContents from "@/components/TableOfContents"
+import ArticleList from "@/components/ArticleList"
 
 export function generateStaticParams() {
   return articles
@@ -164,26 +165,20 @@ export default function ArticlePage({ params }) {
         </div>
       )}
 
-      {article.furtherReadings?.length > 0 && (
-        <div className="mt-8 pt-8 border-t border-[#e5e7eb]">
-          <h3 className="text-sm font-semibold text-[#111] mb-4">
-            Further Readings
-          </h3>
-          <ul className="space-y-2 text-sm text-[#555]">
-            {article.furtherReadings.map((slug) => {
-              const related = getArticleBySlug(slug)
-              if (!related) return null
-              return (
-                <li key={slug}>
-                  <Link href={`/articles/${slug}`} className="text-accent hover:underline">
-                    {related.title}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      )}
+      {article.furtherReadings?.length > 0 && (() => {
+        const related = article.furtherReadings
+          .map((slug) => getArticleBySlug(slug))
+          .filter(Boolean)
+        if (!related.length) return null
+        return (
+          <div className="mt-8 pt-8 border-t border-[#e5e7eb]">
+            <h3 className="text-sm font-semibold text-[#111] mb-4">
+              More Articles
+            </h3>
+            <ArticleList articles={related} />
+          </div>
+        )
+      })()}
 
       <aside className="hidden xl:block absolute left-full top-0 ml-8 h-full">
         <div className="sticky top-24 w-[200px]">

@@ -4,7 +4,7 @@ const article = {
   author: "Luiz Felipe Barbosa",
   date: "2026-01-28",
   summary:
-    "A data-driven look at the design labor market, Figma\u2019s competitive position, and the rise of agentic AI tools. Using Reddit sentiment analysis of 1,766 posts and hands-on testing of four AI platforms, this piece examines whether AI is actually disrupting design \u2014 or just changing what designers do.",
+    "A data-driven look at the design labor market, Figma, and emerging AI design tools, using Reddit sentiment analysis and hands-on platform testing to examine whether AI is disrupting design or changing designers\u2019 roles.",
   sections: [
     {
       paragraphs: [
