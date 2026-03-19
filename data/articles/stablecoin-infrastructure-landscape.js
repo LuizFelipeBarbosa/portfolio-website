@@ -2,7 +2,7 @@ const article = {
   slug: "stablecoin-infrastructure-landscape",
   title: "Stablecoin Infrastructure Landscape",
   author: "Luiz Felipe Barbosa",
-  date: "2026-01-15",
+  date: "2026-01-10",
   summary:
     "A case study of Stripe\u2019s acquisition of Bridge and the emerging stablecoin infrastructure landscape, examining how digital dollars are reshaping cross-border payments and challenging traditional financial rails.",
   sections: [

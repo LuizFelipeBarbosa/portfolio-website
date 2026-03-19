@@ -2,7 +2,7 @@ const article = {
   slug: "can-ai-replace-designers",
   title: "Can AI Replace Designers?",
   author: "Luiz Felipe Barbosa",
-  date: "2026-03-18",
+  date: "2026-01-28",
   summary:
     "A data-driven look at the design labor market, Figma\u2019s competitive position, and the rise of agentic AI tools. Using Reddit sentiment analysis of 1,766 posts and hands-on testing of four AI platforms, this piece examines whether AI is actually disrupting design \u2014 or just changing what designers do.",
   sections: [
