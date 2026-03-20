@@ -64,7 +64,7 @@ const article = {
       },
     },
     {
-      heading: "Section 1: Visualizing the Longshot Bias",
+      heading: "Visualizing the Longshot Bias",
       paragraphs: [
         "This section evaluates market calibration: when a contract trades at a given price, does that price accurately reflect the contract\u2019s empirical probability of resolving in that direction? If contracts trade at 70 cents, do positions taken at that price win approximately 70% of the time? Calibration is the most direct test of whether market prices carry useful information, and its systematic failure is the precondition for a tradable edge.",
         "The analysis loads all resolved contracts with a clear binary outcome and computes, for each price point from 1 to 99 cents, the fraction of contracts at that price that resolved YES. These empirical win rates are then plotted against the 45-degree reference line representing perfect calibration.",
@@ -76,7 +76,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 2: Maker Win Rate by Direction",
+      heading: "Maker Win Rate by Direction",
       paragraphs: [
         "This section tests whether the longshot bias is visible on the maker side of the market. Makers are participants who place limit orders that add liquidity, as opposed to takers who consume it. The question is whether makers who buy YES contracts systematically win more or less often than contract prices imply, depending on whether they are positioned on the YES or NO side.",
         "The sample is restricted to contracts that are finalized with a clear binary outcome. Win rates are computed separately for YES-side and NO-side makers across the full range of implied probabilities, then plotted against the diagonal.",
@@ -88,7 +88,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 3: Calibration in NBA Game Contracts",
+      heading: "Calibration in NBA Game Contracts",
       paragraphs: [
         "This section uses NBA game contracts as a calibration benchmark. These contracts are among the most liquid on Kalshi, attracting sophisticated bettors, offering unambiguous outcomes, and incorporating extensive public information in the form of injury reports, team records, and historical matchup data. Under these conditions, one would expect strong calibration \u2014 making NBA contracts a natural reference point against which to measure other market categories.",
         "Contracts are grouped into ten-percentage-point probability buckets, and the actual YES resolution rate is computed within each bucket and compared to the bucket midpoint.",
@@ -109,7 +109,7 @@ const article = {
       },
     },
     {
-      heading: "Section 4: Calibration Deviation Over Time",
+      heading: "Calibration Deviation Over Time",
       paragraphs: [
         "This section tracks how Kalshi\u2019s calibration evolves over time, examining not just calibration at a single point but whether market prices become more or less accurate as the platform matures. The analysis aggregates all resolved contracts by week and probability bucket, then computes the mean absolute deviation (MAD) between implied and realized frequencies cumulatively over time.",
       ],
@@ -127,7 +127,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 5: Political Mention Calibration Over Time",
+      heading: "Political Mention Calibration Over Time",
       paragraphs: [
         "This section applies the same calibration deviation methodology to political speech mention contracts exclusively. The question is whether the calibration trajectory in this specific market category resembles the broad Kalshi trend, or whether mention contracts exhibit a distinct pattern.",
       ],
@@ -153,7 +153,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 6: Speech Mention Calibration Curve",
+      heading: "Speech Mention Calibration Curve",
       paragraphs: [
         "This section constructs a full calibration curve for political speech mention contracts, paralleling the analysis in Section 3 for NBA markets. Contracts are grouped into ten-percentage-point probability buckets, and the actual YES resolution rate is computed within each bucket.",
       ],
@@ -176,7 +176,7 @@ const article = {
       },
     },
     {
-      heading: "Section 7: Accuracy by Subgroup",
+      heading: "Accuracy by Subgroup",
       paragraphs: [
         "This section examines whether political speech mention contracts behave differently across speaker and event types. Rather than treating all mention contracts as a single pool, the analysis breaks them into recurring subgroups and asks three related questions: first, does the market\u2019s majority view correctly predict the final outcome; second, do quoted probabilities match realized frequencies within each subgroup; and third, if a trader naively follows extreme market probabilities, are the resulting trades profitable after taker fees?",
         "This subgroup structure matters because speech mention contracts are not homogeneous. A market on whether Donald Trump will mention a phrase may behave very differently from a White House press briefing or a niche one-off political event. Grouping contracts by speaker and event type allows the analysis to test whether calibration quality and tradability vary systematically across market contexts.",
@@ -202,7 +202,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 7a: Trump Markets",
+      heading: "Trump Markets",
       paragraphs: [
         "Trump mention contracts are the largest and most liquid subgroup, comprising over 3,400 contracts. The mispricing here is substantial: prices frequently trade below 70 cents for events that resolve YES over 90% of the time. This is the most promising category for a systematic strategy, combining large volume with a large and consistent calibration gap.",
         "The calibration chart below uses three bin sizes \u2014 1, 5, and 10 percentage points \u2014 stacked vertically to show whether the finding is robust to aggregation choice.",
@@ -214,7 +214,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 7b: Press Briefings",
+      heading: "Press Briefings",
       paragraphs: [
         "White House press briefing mention contracts share a similar structure with Trump markets but operate at a somewhat smaller scale and exhibit slightly lower accuracy. Press briefing contracts ask whether a specific topic will be mentioned during the daily White House press secretary\u2019s remarks \u2014 a recurring, high-frequency event format.",
       ],
@@ -225,7 +225,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 7c: Mamdani Markets",
+      heading: "Mamdani Markets",
       paragraphs: [
         "The Zohran Mamdani NYC mayoral race contracts represent a distinct subgroup: hyper-local political contracts that retail traders likely price poorly due to limited information availability about local political dynamics. Despite being smaller in total volume than Trump or press briefing markets, Mamdani contracts exhibit the most dramatic mispricing of any subgroup \u2014 making them an attractive but lower-scale opportunity.",
       ],
@@ -236,7 +236,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 7d: Niche / One-off Contracts",
+      heading: "Niche / One-off Contracts",
       paragraphs: [
         "The fourth subgroup encompasses every political speech mention contract that does not fall under Trump, press briefings, or Mamdani. This includes one-off events such as congressional hearings, agency announcements, and miscellaneous political speeches \u2014 contracts that appear once and never recur. Despite being the largest subgroup by contract count (approximately 13,300 contracts), these markets are the least promising for a systematic strategy.",
       ],
@@ -247,7 +247,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 8: Testing Trading Strategies",
+      heading: "Testing Trading Strategies",
       paragraphs: [
         "This section evaluates whether simple threshold-based trading rules would have been profitable within each subgroup. Using the 2-hour VWAP as the entry signal, the analysis simulates three taker strategies: the extremes strategy, which buys YES if price exceeds 70 cents and NO if price falls below 30 cents; the favorites strategy, which buys YES when price exceeds 60 cents; and the high-confidence strategy, which buys YES only when price exceeds 70 cents.",
         "An important methodological consideration is the explicit modeling of Kalshi\u2019s taker fee schedule. At a price of 70 cents, the fee is approximately 1.5 cents per contract, reducing the upside from 30 cents to 28.5 cents \u2014 approximately a 5% drag on returns. The net return formula is as follows: if YES resolves YES, the net return is (100 \u2212 price \u2212 fee) / 100; if YES resolves NO, the net return is \u2212(price + fee) / 100. All strategy evaluations use this fee-adjusted calculation.",
@@ -259,7 +259,7 @@ const article = {
       ],
     },
     {
-      heading: "Section 9: Cross-Subgroup Strategy Comparison",
+      heading: "Cross-Subgroup Strategy Comparison",
       paragraphs: [
         "This section brings together all four subgroups and all strategy thresholds (>60%, >70%, >80%, >90%) in a unified comparison framework, using a profit heatmap to identify where the edge is strongest across the subgroup-threshold space.",
         "The cross-subgroup analysis confirms the ranking established in earlier sections. Trump markets offer the best combination of scale and edge, followed by Mamdani (high edge per trade, lower total volume), press briefings (moderate on both dimensions), and niche one-offs (weakest). Per-trade profit increases with threshold stringency across all subgroups \u2014 the >90% threshold yields the highest per-trade return everywhere \u2014 but trade counts drop sharply, creating the familiar tradeoff between selectivity and volume.",
