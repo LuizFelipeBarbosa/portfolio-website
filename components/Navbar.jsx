@@ -57,7 +57,7 @@ export default function Navbar() {
 
       {/* Mobile menu backdrop */}
       <div
-        className={`md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        className={`md:hidden fixed inset-0 z-[60] bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         onClick={() => setMobileMenuOpen(false)}
         aria-hidden="true"
@@ -65,7 +65,7 @@ export default function Navbar() {
 
       {/* Mobile menu sidebar */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-screen w-64 bg-[#fafafa] shadow-2xl border-l border-[#e5e7eb] transform transition-transform duration-300 ease-in-out flex flex-col pt-24 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`md:hidden fixed top-0 right-0 h-screen w-64 z-[70] bg-[#fafafa] shadow-2xl border-l border-[#e5e7eb] transform transition-transform duration-300 ease-in-out flex flex-col pt-24 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
         <div className="px-6 space-y-6 flex flex-col">
