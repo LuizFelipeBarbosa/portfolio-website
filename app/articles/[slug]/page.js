@@ -4,6 +4,7 @@ import { articles, getArticleBySlug, formatDate, getReadTime } from "@/data/arti
 import { slugify } from "@/lib/slugify"
 import TableOfContents from "@/components/TableOfContents"
 import ArticleList from "@/components/ArticleList"
+import { ClickableImage } from "@/components/ImageLightbox"
 
 export function generateStaticParams() {
   return articles
@@ -101,18 +102,11 @@ export default function ArticlePage({ params }) {
               <Paragraph key={j} text={p} footnotes={article.footnotes} />
             ))}
             {section.image && (
-              <figure className="my-6">
-                <img
-                  src={section.image}
-                  alt={section.imageCaption || ""}
-                  className="w-full rounded"
-                />
-                {section.imageCaption && (
-                  <figcaption className="mt-2 text-xs text-[#888] italic">
-                    {section.imageCaption}
-                  </figcaption>
-                )}
-              </figure>
+              <ClickableImage
+                src={section.image}
+                alt={section.imageCaption || ""}
+                caption={section.imageCaption}
+              />
             )}
             {section.paragraphsAfterImage?.map((p, j) => (
               <Paragraph key={`after-${j}`} text={p} footnotes={article.footnotes} />

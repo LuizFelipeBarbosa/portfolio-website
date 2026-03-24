@@ -12,6 +12,15 @@ module.exports = {
       fontFamily: {
         body: ['var(--font-body)', 'sans-serif'],
       },
+      animation: {
+        'fade-in': 'fadeIn 150ms ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
     },
   },
   plugins: [],
