@@ -45,7 +45,6 @@ const article = {
       paragraphs: [
         "The first instinct was to look for critical commentary where you would expect to find it: in the longest comments or the most-engaged ones.",
         "It did not work. The longest comments sorted by likes are dominated by catharsis and glamor \u2014 people admiring artists, sharing song lyrics, posting translations, writing motivational messages, copying religious texts, telling stories about deceased family members, and posting copypasta (the generic fan-spam that is its own subculture within artist communities). The most-liked and most-replied comments tell a similar story: heartwarming narratives about beating cancer, calls for connection across time zones \u2014 \u201CAnyone here in September 2025?\u201D \u2014 and the kind of ritualistic community-building that Adorno would have filed under the catharsis function of mass culture.",
-        "There is something Adorno does not predict here: genuine community building, where users form bonds around a song, interact with strangers, and turn individual catharsis into moments of shared empathy. But that is not the same as critique. The signal, if it existed, was buried in the text itself \u2014 not in the metadata.",
       ],
     },
     {
