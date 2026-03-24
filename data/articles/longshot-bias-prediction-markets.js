@@ -4,7 +4,7 @@ const article = {
   author: "Luiz Felipe Barbosa",
   date: "2026-03-15",
   summary:
-    "A systematic analysis of calibration errors in Kalshi political speech mention markets. Using VWAP snapshots across eight pre-resolution horizons and 18,757 resolved contracts, this paper identifies persistent mispricing in the 70\u201380% implied-probability range and evaluates fee-adjusted trading strategies across four market subgroups.",
+    "A calibration study of 18,757 resolved Kalshi political speech mention contracts. The paper finds persistent mispricing and evaluates fee-adjusted trading strategies across four market subgroups.",
   sections: [
     {
       paragraphs: [
