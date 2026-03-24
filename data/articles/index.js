@@ -1,3 +1,4 @@
+import adorno from "./adorno-culture-industry-youtube"
 import mamdani from "./how-zohran-mamdani-won-new-york-city"
 import burgerKing from "./burger-king-and-kid-bengala-controversy"
 import rashomon from "./truth-in-frames-rashomon-vs-nationalism"
@@ -16,6 +17,7 @@ import longshot from "./longshot-bias-prediction-markets"
 import merda from "./my-favorite-artwork"
 
 export const articles = [
+  adorno,
   longshot,
   figmaAI,
   merda,
