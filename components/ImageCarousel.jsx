@@ -49,14 +49,11 @@ export default function ImageCarousel({ images = [] }) {
       <figure className="my-6">
         <div className="overflow-hidden rounded-xl border border-[#e5e7eb] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
           <div className="flex items-center justify-between border-b border-[#f0f0f0] px-4 py-3">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#888]">
-                Image carousel
-              </p>
-              {active.label && (
-                <p className="mt-1 text-sm text-[#333]">{active.label}</p>
-              )}
-            </div>
+            {active.label ? (
+              <p className="text-sm text-[#333]">{active.label}</p>
+            ) : (
+              <div />
+            )}
             <div className="flex items-center gap-2 text-xs text-[#888]">
               <span>
                 {index + 1} / {total}
