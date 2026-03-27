@@ -9,7 +9,7 @@ const article = {
     {
       paragraphs: [
         "Prediction markets promise a very clean deal: the price is supposed to be the probability. If a contract trades at 70 cents, it should resolve YES about 70% of the time (Wolfers & Zitzewitz, 2006). When that relationship breaks, the interesting question is not just whether the market is wrong. It is how it is wrong, where it is wrong, and whether the error is random noise or something more structural.",
-        "Recent work by Bürgi, Deng, and Whelan (2026) shows that Kalshi exhibits a favorite–longshot bias at the exchange level. But aggregate results only get you so far. Mention markets are a much better laboratory for looking at calibration because they are repetitive, short-lived, and unusually legible: the same types of events recur, the contract wording is clean, and outcomes can be checked quickly. That makes them one of the best places to see whether the market is actually learning or just repeating the same pricing mistakes in slightly different costumes.",
+        "Recent work by Bürgi, Deng, and Whelan (2025) shows that Kalshi exhibits a favorite–longshot bias at the exchange level. But aggregate results only get you so far. Mention markets are a much better laboratory for looking at calibration because they are repetitive, short-lived, and unusually legible: the same types of events recur, the contract wording is clean, and outcomes can be checked quickly. That makes them one of the best places to see whether the market is actually learning or just repeating the same pricing mistakes in slightly different costumes.",
         "This article looks at 18,948 resolved mention contracts across 126 series in six categories: Politicians, Sports, Earnings, Entertainment, Finance, and Media/News. Using volume-weighted average prices (VWAPs) measured at multiple horizons before the last trade, I examine how well prices track realized outcomes, how quickly markets move toward fair probabilities, and whether the remaining errors survive Kalshi's fee schedule well enough to matter. The basic finding is simple. Mention markets do converge. They just do not all converge in the same way, or at the same speed.",
       ],
     },
@@ -209,7 +209,7 @@ const article = {
       imageCaption:
         "Figure 12: Net PnL per trade (in cents) for Buy YES (left) and Buy NO (right) strategies across all categories and thresholds. Green cells indicate profitable strategies; red cells indicate losses. The NO side shows broadly positive returns, while the YES side is profitable only at higher thresholds.",
       paragraphsAfterImage: [
-        "The asymmetry is not subtle. The best Buy NO threshold (<50%) averages +14.1 cents per trade, nearly three times the best Buy YES threshold. That implies the dominant miscalibration in mention markets sits on the low end of the probability distribution: traders systematically overestimate the chance that a word or phrase will be mentioned. The pattern lines up with the favorite–longshot bias documented in betting and prediction markets more broadly (Page & Clemen, 2013; Snowberg & Wolfers, 2010), including at the aggregate Kalshi level (Bürgi, Deng, & Whelan, 2026).",
+        "The asymmetry is not subtle. The best Buy NO threshold (<50%) averages +14.1 cents per trade, nearly three times the best Buy YES threshold. That implies the dominant miscalibration in mention markets sits on the low end of the probability distribution: traders systematically overestimate the chance that a word or phrase will be mentioned. The pattern lines up with the favorite–longshot bias documented in betting and prediction markets more broadly (Page & Clemen, 2013; Snowberg & Wolfers, 2010), including at the aggregate Kalshi level (Bürgi, Deng, & Whelan, 2025).",
       ],
     },
     {
@@ -277,8 +277,8 @@ const article = {
   ],
   citations: [
     "Arrow, K.J., Forsythe, R., Gorham, M., et al. (2008). \"The Promise of Prediction Markets.\" Science, 320(5878), 877–878.",
-    "Brown, A., Reade, J.J., and Vaughan Williams, L. (2019). \"When Are Prediction Market Prices Most Informative?\" International Journal of Forecasting, 35(1), 420–428.",
-    "Bürgi, C., Deng, W., and Whelan, K. (2026). \"Makers and Takers: The Economics of the Kalshi Prediction Market.\" CEPR Discussion Paper No. 20631 / CESifo Working Paper No. 12122.",
+    "Brown, A., Reade, J. J., and Vaughan-Williams, L. (2019). \"When Are Prediction Market Prices Most Informative?\" International Journal of Forecasting, 35(1), 420–428.",
+    "Bürgi, C., Deng, W., and Whelan, K. (2025). \"Makers and Takers: The Economics of the Kalshi Prediction Market.\" CEPR Discussion Paper No. 20631; CESifo Working Paper No. 12122.",
     "Kahneman, D. and Tversky, A. (1979). \"Prospect Theory: An Analysis of Decision under Risk.\" Econometrica, 47(2), 263–291.",
     "Page, L. and Clemen, R.T. (2013). \"Do Prediction Markets Produce Well-Calibrated Probability Forecasts?\" The Economic Journal, 123(568), 491–513.",
     "Snowberg, E. and Wolfers, J. (2010). \"Explaining the Favorite–Long Shot Bias: Is it Risk-Love or Misperceptions?\" Journal of Political Economy, 118(4), 723–746.",
