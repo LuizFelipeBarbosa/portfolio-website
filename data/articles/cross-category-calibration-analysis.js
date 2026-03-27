@@ -1,5 +1,5 @@
 const article = {
-  slug: "cross-category-calibration-analysis",
+  slug: "longshot-bias-prediction-markets",
   title: "Cross-Category Calibration Analysis of Kalshi Mention Markets",
   author: "Luiz Felipe Barbosa",
   date: "2026-03-27",
