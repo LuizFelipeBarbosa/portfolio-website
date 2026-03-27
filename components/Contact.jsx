@@ -8,7 +8,7 @@ export default function Contact() {
       <h2 className="text-2xl font-bold text-[#111] mb-4">Get in touch</h2>
 
       <p className="text-[#444] mb-3">
-        I am open to quant research internships and trading roles for Summer 2026.
+        I am open for research internships and other roles for Summer 2026.
       </p>
 
       <div className="flex gap-6 text-sm mb-16">
