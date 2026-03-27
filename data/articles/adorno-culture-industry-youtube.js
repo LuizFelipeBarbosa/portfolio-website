@@ -2,7 +2,7 @@ const article = {
   slug: "adorno-culture-industry-youtube",
   title: "Adorno\u2019s Critique in the Age of the \u201CFor You\u201D Page",
   author: "Luiz Felipe Barbosa",
-  date: "2026-03-23",
+  date: "2026-02-25",
   summary:
     "This project analyzes 84,816 YouTube comments on the 15 most-streamed songs of 2025 to test Adorno\u2019s Culture Industry. It finds that only 0.32% of comments critically engage with the production system behind pop music.",
   sections: [
