@@ -9,7 +9,7 @@ export default function Research() {
         Research &amp; Writing
       </p>
 
-      <ArticleList articles={articles.slice(0, 3)} />
+      <ArticleList articles={articles.slice(0, 5)} />
 
       <Link
         href="/research"
