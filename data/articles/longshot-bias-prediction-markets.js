@@ -54,7 +54,7 @@ const article = {
           ["Calibration Error", "The gap between implied probability and actual resolution rate. A positive gap indicates that the market underprices YES outcomes; a negative gap indicates overpricing."],
           ["Longshot Bias", "The empirical pattern in which low-probability contracts are overpriced and high-probability contracts are underpriced relative to their true resolution rates."],
           ["Pre-resolution horizon", "The time window before market close at which the VWAP is measured. For example, the \u201c2h before\u201d snapshot uses all trades placed at least two hours before market close."],
-          ["Taker fee", "Fee paid when placing a market order that fills immediately against existing liquidity. On Kalshi: Fee(p) = \u2308 0.07 \u00d7 p \u00d7 (100 \u2212 p) / 100 \u2309 cents, where p is the price in cents."],
+          ["Taker fee", "Fee paid when placing a market order that fills immediately against existing liquidity. On Kalshi: $\\mathrm{Fee}(p) = \\left\\lceil 0.07 \\cdot \\frac{p(100-p)}{100} \\right\\rceil$ cents, where $p$ is the price in cents."],
           ["Maker order", "A limit order that adds liquidity rather than consuming it. On Kalshi, maker orders pay zero fees, but fills are not guaranteed."],
           ["Expected Value (EV)", "Expected profit per dollar invested. Positive EV indicates a profitable edge on average."],
           ["MAD", "Mean Absolute Deviation \u2014 the average magnitude of calibration error across price buckets. A lower MAD indicates better calibration."],
@@ -121,8 +121,8 @@ const article = {
       imageCaption: "Figure 4: Weekly cumulative mean absolute calibration deviation across all resolved Kalshi contracts. A declining trend indicates that market pricing is becoming more accurate over time.",
       paragraphsAfterImage: [
         "The methodology proceeds in two stages. First, the analysis reconstructs all trade positions from resolved contracts, including both the buyer side at the recorded price and the counterparty side at the complementary price. Second, it evaluates calibration cumulatively at weekly intervals, computing the mean absolute deviation across price points as the running sample grows.",
-        "Formally, the calibration deviation at weekly snapshot t is defined as the mean across all represented price levels p of the absolute difference between the empirical win rate at that price and the price itself:",
-        "MAD\u209C = (1/|\u2118\u209C|) \u00d7 \u03a3\u209A\u2208\u2118\u209C | WinRate\u209C(p) \u2212 p |",
+        "Formally, the calibration deviation at weekly snapshot $t$ is defined as the mean across all represented price levels $p$ of the absolute difference between the empirical win rate at that price and the price itself:",
+        "$$\\mathrm{MAD}_t = \\frac{1}{|\\mathcal{P}_t|} \\sum_{p \\in \\mathcal{P}_t} \\left| \\mathrm{WinRate}_t(p) - p \\right|$$",
         "The time series shows a clear decline over the platform\u2019s history. Early periods, when the platform was newer and liquidity was thinner, exhibit substantially higher calibration error. As the platform has grown and attracted more sophisticated participants, the mean absolute deviation has trended downward. This pattern is consistent with models of market learning in which prices converge toward fundamental values as more informed capital enters the market.{{3}}",
       ],
     },
@@ -250,7 +250,7 @@ const article = {
       heading: "Testing Trading Strategies",
       paragraphs: [
         "This section evaluates whether simple threshold-based trading rules would have been profitable within each subgroup. Using the 2-hour VWAP as the entry signal, the analysis simulates three taker strategies: the extremes strategy, which buys YES if price exceeds 70 cents and NO if price falls below 30 cents; the favorites strategy, which buys YES when price exceeds 60 cents; and the high-confidence strategy, which buys YES only when price exceeds 70 cents.",
-        "An important methodological consideration is the explicit modeling of Kalshi\u2019s taker fee schedule. At a price of 70 cents, the fee is approximately 1.5 cents per contract, reducing the upside from 30 cents to 28.5 cents \u2014 approximately a 5% drag on returns. The net return formula is as follows: if YES resolves YES, the net return is (100 \u2212 price \u2212 fee) / 100; if YES resolves NO, the net return is \u2212(price + fee) / 100. All strategy evaluations use this fee-adjusted calculation.",
+        "An important methodological consideration is the explicit modeling of Kalshi\u2019s taker fee schedule. At a price of 70 cents, the fee is approximately 1.5 cents per contract, reducing the upside from 30 cents to 28.5 cents \u2014 approximately a 5% drag on returns. The net return formula is as follows: if YES resolves YES, the net return is $\\frac{100 - \\mathrm{price} - \\mathrm{fee}}{100}$; if YES resolves NO, the net return is $-\\frac{\\mathrm{price} + \\mathrm{fee}}{100}$. All strategy evaluations use this fee-adjusted calculation.",
       ],
       image: "/articles/longshot-bias/cell48-fig1.png",
       imageCaption: "Figure 12: Strategy comparison for Trump markets. Left panel: gross vs. net per-trade returns across three strategies. Right panel: cumulative dollar profit. The >60% threshold maximizes total profit through volume; the >70% threshold maximizes per-trade return.",

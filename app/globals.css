@@ -16,6 +16,15 @@
     color: #111111;
   }
 
+  .article-math-inline .katex {
+    font-size: 1.02em;
+  }
+
+  .article-math-display .katex {
+    font-size: 1.05em;
+    padding: 0.125rem 0;
+  }
+
   ::-webkit-scrollbar {
     width: 6px;
   }

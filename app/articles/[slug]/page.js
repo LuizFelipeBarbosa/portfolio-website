@@ -1,10 +1,13 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import katex from "katex"
 import { articles, getArticleBySlug, formatDate, getReadTime } from "@/data/articles"
 import { slugify } from "@/lib/slugify"
 import TableOfContents from "@/components/TableOfContents"
 import ArticleList from "@/components/ArticleList"
 import { ClickableImage } from "@/components/ImageLightbox"
+
+const RICH_TEXT_TOKEN_REGEX = /(\{\{\d+\}\}|\$\$[\s\S]+?\$\$|\$(?:\\.|[^$\n])+\$)/g
 
 export function generateStaticParams() {
   return articles
@@ -21,21 +24,50 @@ export function generateMetadata({ params }) {
   }
 }
 
-function renderText(text, footnotes) {
-  if (!text.includes("{{")) return text
-  const parts = text.split(/(\{\{\d+\}\})/)
+function renderMath(expression, displayMode = false) {
+  return katex.renderToString(expression.trim(), {
+    displayMode,
+    throwOnError: false,
+    strict: "ignore",
+  })
+}
+
+function RichText({ text, footnotes, className = "" }) {
+  const parts = String(text).split(RICH_TEXT_TOKEN_REGEX).filter(Boolean)
+
   return parts.map((part, i) => {
-    const match = part.match(/^\{\{(\d+)\}\}$/)
-    if (match) {
-      const num = parseInt(match[1])
+    const footnoteMatch = part.match(/^\{\{(\d+)\}\}$/)
+    if (footnoteMatch) {
+      const num = Number.parseInt(footnoteMatch[1], 10)
       const note = footnotes?.[num - 1]
       return (
-        <sup key={i} className="text-[10px] text-[#888] ml-[1px]" title={note}>
+        <sup key={`${className}-footnote-${i}`} className="text-[10px] text-[#888] ml-[1px]" title={note}>
           {num}
         </sup>
       )
     }
-    return part
+
+    if (part.startsWith("$$") && part.endsWith("$$")) {
+      return (
+        <span
+          key={`${className}-display-math-${i}`}
+          className="article-math-display block my-6 overflow-x-auto"
+          dangerouslySetInnerHTML={{ __html: renderMath(part.slice(2, -2), true) }}
+        />
+      )
+    }
+
+    if (part.startsWith("$") && part.endsWith("$")) {
+      return (
+        <span
+          key={`${className}-inline-math-${i}`}
+          className="article-math-inline"
+          dangerouslySetInnerHTML={{ __html: renderMath(part.slice(1, -1)) }}
+        />
+      )
+    }
+
+    return <span key={`${className}-text-${i}`}>{part}</span>
   })
 }
 
@@ -59,7 +91,11 @@ function renderCitation(text) {
 }
 
 function Paragraph({ text, footnotes }) {
-  return <p className="mb-4">{renderText(text, footnotes)}</p>
+  return (
+    <p className="mb-4">
+      <RichText text={text} footnotes={footnotes} className="paragraph" />
+    </p>
+  )
 }
 
 export default function ArticlePage({ params }) {
@@ -127,8 +163,8 @@ export default function ArticlePage({ params }) {
                     {section.table.rows.map((row, j) => (
                       <tr key={j} className={j % 2 === 0 ? "bg-[#f5f5f5]" : ""}>
                         {row.map((cell, k) => (
-                          <td key={k} className="py-2 px-3 border-b border-[#e5e7eb] text-xs text-[#444]">
-                            {cell}
+                          <td key={k} className="py-2 px-3 border-b border-[#e5e7eb] text-xs text-[#444] align-top">
+                            <RichText text={cell} footnotes={article.footnotes} className={`table-${j}-${k}`} />
                           </td>
                         ))}
                       </tr>
