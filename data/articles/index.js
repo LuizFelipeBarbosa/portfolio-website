@@ -14,11 +14,13 @@ import fightclub from "./insomnia-through-the-lens-of-fight-club"
 import stablecoin from "./stablecoin-infrastructure-landscape"
 import figmaAI from "./can-ai-replace-designers"
 import longshot from "./longshot-bias-prediction-markets"
+import crossCategoryCalibration from "./cross-category-calibration-analysis"
 import merda from "./my-favorite-artwork"
 
 export const articles = [
   adorno,
   longshot,
+  crossCategoryCalibration,
   figmaAI,
   merda,
   mamdani,
@@ -43,7 +45,11 @@ export function getArticleBySlug(slug) {
 export function getReadTime(article) {
   if (!article.sections) return null
   const text = article.sections
-    .flatMap((s) => [...(s.paragraphs || []), ...(s.paragraphsAfterImage || [])])
+    .flatMap((s) => [
+      ...(s.paragraphs || []),
+      ...(s.bullets || []),
+      ...(s.paragraphsAfterImage || []),
+    ])
     .join(" ")
   const words = text.split(/\s+/).length
   return Math.max(1, Math.round(words / 230))

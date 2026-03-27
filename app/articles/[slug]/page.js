@@ -6,6 +6,7 @@ import { slugify } from "@/lib/slugify"
 import TableOfContents from "@/components/TableOfContents"
 import ArticleList from "@/components/ArticleList"
 import { ClickableImage } from "@/components/ImageLightbox"
+import ImageCarousel from "@/components/ImageCarousel"
 
 const RICH_TEXT_TOKEN_REGEX = /(\{\{\d+\}\}|\$\$[\s\S]+?\$\$|\$(?:\\.|[^$\n])+\$)/g
 
@@ -91,10 +92,35 @@ function renderCitation(text) {
 }
 
 function Paragraph({ text, footnotes }) {
+  const trimmed = String(text).trim()
+  const isDisplayOnly = trimmed.startsWith("$$") && trimmed.endsWith("$$")
+
+  if (isDisplayOnly) {
+    return (
+      <div className="mb-4">
+        <RichText text={trimmed} footnotes={footnotes} className="paragraph" />
+      </div>
+    )
+  }
+
   return (
     <p className="mb-4">
       <RichText text={text} footnotes={footnotes} className="paragraph" />
     </p>
+  )
+}
+
+function BulletList({ items = [], footnotes }) {
+  if (!items.length) return null
+
+  return (
+    <ul className="mb-4 list-disc space-y-2 pl-6">
+      {items.map((item, index) => (
+        <li key={index}>
+          <RichText text={item} footnotes={footnotes} className={`bullet-${index}`} />
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -137,12 +163,16 @@ export default function ArticlePage({ params }) {
             {section.paragraphs.map((p, j) => (
               <Paragraph key={j} text={p} footnotes={article.footnotes} />
             ))}
+            <BulletList items={section.bullets} footnotes={article.footnotes} />
             {section.image && (
               <ClickableImage
                 src={section.image}
                 alt={section.imageCaption || ""}
                 caption={section.imageCaption}
               />
+            )}
+            {section.carousel && section.carousel.length > 0 && (
+              <ImageCarousel images={section.carousel} />
             )}
             {section.paragraphsAfterImage?.map((p, j) => (
               <Paragraph key={`after-${j}`} text={p} footnotes={article.footnotes} />
