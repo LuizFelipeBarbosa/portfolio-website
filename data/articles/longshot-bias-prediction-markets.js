@@ -5,6 +5,7 @@ const article = {
   date: "2026-03-15",
   summary:
     "A calibration study of 18,757 resolved Kalshi political speech mention contracts. The paper finds persistent mispricing and evaluates fee-adjusted trading strategies across four market subgroups.",
+  archived: true,
   sections: [
     {
       paragraphs: [

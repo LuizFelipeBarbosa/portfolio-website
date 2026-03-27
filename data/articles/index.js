@@ -17,7 +17,7 @@ import longshot from "./longshot-bias-prediction-markets"
 import crossCategoryCalibration from "./cross-category-calibration-analysis"
 import merda from "./my-favorite-artwork"
 
-export const articles = [
+export const allArticles = [
   adorno,
   longshot,
   crossCategoryCalibration,
@@ -38,8 +38,10 @@ export const articles = [
   stablecoin,
 ].sort((a, b) => b.date.localeCompare(a.date))
 
+export const articles = allArticles.filter((a) => !a.archived)
+
 export function getArticleBySlug(slug) {
-  return articles.find((a) => a.slug === slug)
+  return allArticles.find((a) => a.slug === slug)
 }
 
 export function getReadTime(article) {

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import katex from "katex"
-import { articles, getArticleBySlug, formatDate, getReadTime } from "@/data/articles"
+import { allArticles, articles, getArticleBySlug, formatDate, getReadTime } from "@/data/articles"
 import { slugify } from "@/lib/slugify"
 import TableOfContents from "@/components/TableOfContents"
 import ArticleList from "@/components/ArticleList"
@@ -11,7 +11,7 @@ import ImageCarousel from "@/components/ImageCarousel"
 const RICH_TEXT_TOKEN_REGEX = /(\{\{\d+\}\}|\$\$[\s\S]+?\$\$|\$(?:\\.|[^$\n])+\$)/g
 
 export function generateStaticParams() {
-  return articles
+  return allArticles
     .filter((a) => a.slug)
     .map((a) => ({ slug: a.slug }))
 }
@@ -228,7 +228,7 @@ export default function ArticlePage({ params }) {
       {(() => {
         const explicit = (article.furtherReadings || [])
           .map((slug) => getArticleBySlug(slug))
-          .filter(Boolean)
+          .filter((item) => item && !item.archived)
         const others = articles.filter(
           (a) => a.slug && a.slug !== article.slug && !explicit.includes(a)
         )
