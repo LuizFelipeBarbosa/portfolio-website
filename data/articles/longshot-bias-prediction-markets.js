@@ -1,5 +1,5 @@
 const article = {
-  slug: "cross-category-calibration-analysis",
+  slug: "longshot-bias-prediction-markets",
   title: "Calibration Errors and Trading Opportunities in Kalshi Political Speech Mention Markets",
   author: "Luiz Felipe Barbosa",
   date: "2026-03-15",
