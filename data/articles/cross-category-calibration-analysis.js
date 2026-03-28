@@ -2,7 +2,7 @@ const article = {
   slug: "cross-category-calibration-analysis",
   title: "Cross-Category Calibration Analysis of Kalshi Mention Markets",
   author: "Luiz Felipe Barbosa",
-  date: "2026-03-27",
+  date: "2026-03-15",
   summary:
     "A cross-category study of 18,948 Kalshi mention contracts showing that calibration improves as events approach, but longshot bias still leaves the NO side systematically underpriced.",
   sections: [
