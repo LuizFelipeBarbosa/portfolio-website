@@ -145,9 +145,22 @@ export default function ArticlePage({ params }) {
         {article.title}
       </h1>
 
-      <p className="text-sm text-[#888] mb-12">
+      <p className="text-sm text-[#888] mb-6">
         {article.author} &middot; {formatDate(article.date)} &middot; {getReadTime(article)} min read
       </p>
+
+      {article.archivedNotice && (
+        <div className="mb-10 rounded-xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm text-amber-950">
+          <p className="font-medium text-amber-900">Archived article</p>
+          <p className="mt-1 leading-relaxed">
+            {article.archivedNotice.text}{" "}
+            <Link href={article.archivedNotice.href} className="font-medium underline underline-offset-2 hover:text-amber-700">
+              Read {article.archivedNotice.label}
+            </Link>
+            .
+          </p>
+        </div>
+      )}
 
       <div className="space-y-6 text-[#333] leading-relaxed text-[16px]">
         {article.sections.map((section, i) => (
