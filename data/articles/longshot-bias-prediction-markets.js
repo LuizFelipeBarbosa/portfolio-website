@@ -7,8 +7,8 @@ const article = {
     "A calibration study of 18,757 resolved Kalshi political speech mention contracts. The paper finds persistent mispricing and evaluates fee-adjusted trading strategies across four market subgroups.",
   archived: true,
   archivedNotice: {
-    href: "/articles/cross-category-calibration-analysis",
-    label: "Cross-Category Calibration Analysis of Kalshi Mention Markets",
+    href: "/articles/political-mention-market-calibration",
+    label: "the updated political-market version",
     text: "This article is out of date and has been reworked and simplified in a newer version.",
   },
   sections: [

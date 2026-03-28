@@ -14,12 +14,14 @@ import fightclub from "./insomnia-through-the-lens-of-fight-club"
 import stablecoin from "./stablecoin-infrastructure-landscape"
 import figmaAI from "./can-ai-replace-designers"
 import longshot from "./longshot-bias-prediction-markets"
+import politicalMentionCalibration from "./political-mention-market-calibration"
 import crossCategoryCalibration from "./cross-category-calibration-analysis"
 import merda from "./my-favorite-artwork"
 
 export const allArticles = [
   adorno,
   longshot,
+  politicalMentionCalibration,
   crossCategoryCalibration,
   figmaAI,
   merda,
