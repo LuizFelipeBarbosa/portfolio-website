@@ -1,5 +1,16 @@
 export const projects = [
   {
+    title: "Earplug",
+    year: "2026",
+    description:
+      "Startup project for Earplug, with an informational site and the main web app.",
+    tags: "Startup, Web App",
+    links: [
+      { label: "Info", href: "https://earplug.app/" },
+      { label: "App", href: "https://earplug.dev/home" },
+    ],
+  },
+  {
     title: "Photobooth",
     year: "2026",
     description:
