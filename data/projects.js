@@ -3,7 +3,7 @@ export const projects = [
     title: "Earplug",
     year: "2026",
     description:
-      "Startup project for Earplug, with an informational site and the main web app.",
+      "Founding engineer for EarPlug, a mobile-first platform connecting Bay Area live music fans with musicians and bands. Built tools for discovery, gig management, venue coordination, and audience growth.",
     tags: "Startup, Web App",
     links: [
       { label: "Info", href: "https://earplug.app/" },
